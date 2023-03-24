@@ -1,0 +1,18 @@
+.homecss {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 15px;
+  border: 2px solid red;
+
+  top: 12%;
+  position: relative;
+}
+
+.BoxTitle {
+  border: 2px solid rgb(157, 255, 0);
+  width: 20%;  
+}
+.boxCatalogo {
+  border: 2px solid rgb(0, 225, 255);
+  width: 80%;  
+}

@@ -1,0 +1,28 @@
+.boxFormLogin {
+  height: 100%;
+  width: 100%;
+  background-image: url("../../../img/LoginForm.jpg");
+
+  background-position:center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+.frmLogin {
+  border: 2px solid red;
+  width: 40%;
+  height: auto;
+  margin: auto;
+  top: 20%;
+  position: relative;
+
+  background: rgba(11, 78, 140, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+.frmLogin h1 {
+  color: #fff;
+  font-size: 25px;
+}

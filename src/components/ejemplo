@@ -1,0 +1,98 @@
+import { useState } from 'react';
+import axios from 'axios';
+
+function Login() {
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    try {
+      const response = await axios.post('/api/login', {
+        username,
+        password,
+      });
+
+      // El servidor devuelve un token de autenticación si el login es exitoso.
+      const token = response.data.token;
+
+      // Guardamos el token en el localStorage del navegador para mantener la sesión abierta.
+      localStorage.setItem('token', token);
+
+      // Actualizamos el estado de autenticación del usuario.
+      setAuthenticated(true);
+
+      // Redirigimos al usuario a la página deseada.
+      history.push('/home');
+    } catch (error) {
+      // Manejamos el error en caso de que el login falle.
+      setErrorMessage('Nombre de usuario o contraseña incorrectos');
+    }
+  };
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <label>
+        Nombre de usuario:
+        <input type="text" value={username} onChange={(event) => setUsername(event.target.value)} />
+      </label>
+      <label>
+        Contraseña:
+        <input type="password" value={password} onChange={(event) => setPassword(event.target.value)} />
+      </label>
+      <button type="submit">Ingresar</button>
+      {errorMessage && <p>{errorMessage}</p>}
+    </form>
+  );
+}
+
+***************
+
+import express from "express";
+import mongoose from "mongoose";
+import jwt from "jsonwebtoken";
+import bcrypt from "bcrypt";
+
+const app = express();
+const port = 3000;
+const secret = "mysecret";
+
+mongoose.connect("mongodb://localhost/mydatabase", {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
+
+const UserSchema = new mongoose.Schema({
+  email: String,
+  password: String,
+});
+
+const User = mongoose.model("User", UserSchema);
+
+app.use(express.json());
+
+app.post("/login", async (req, res) => {
+  const { email, password } = req.body;
+
+  const user = await User.findOne({ email });
+
+  if (!user) {
+    return res.status(400).json({ error: "Invalid credentials" });
+  }
+
+  const isPasswordValid = await bcrypt.compare(password, user.password);
+
+  if (!isPasswordValid) {
+    return res.status(400).json({ error: "Invalid credentials" });
+  }
+
+  const token = jwt.sign({ email: user.email }, secret);
+
+  res.json({ token });
+});
+
+app.listen(port, () => {
+  console.log(`Server listening at http://localhost:${port}`);
+});
