@@ -13,7 +13,7 @@ function menuNavegation() {
       </div>
       <div className="boxSearch">
         <ul className="boxMenuUl">
-          <NavLink to="/*" className="li">
+          <NavLink to="/home" className="li">
             HOME
           </NavLink>
           <NavLink to="/list" className="li">

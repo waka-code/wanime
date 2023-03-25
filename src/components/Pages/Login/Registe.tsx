@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import axios from "axios";
-import { htmlElement, apiUrlCreateUser } from "./types/types";
+import { htmlElement } from "./types/types";
 import { useNavigate } from "react-router-dom";
+import { apiUrlCreateUser } from "../../../Apis/apis";
 
 function Registe() {
   const [name, setName] = useState("");

@@ -1,0 +1,35 @@
+.boxFooter{
+    position: relative;
+    height: auto;
+    top: 85px;
+    background: rgb(0, 0, 0);
+    color:#fff;
+    text-align: center;
+    padding: 10px;
+
+}
+.boxFooterSections{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.boxLogoFooter{
+    display: flex;
+    align-items: center;
+}
+.boxLogoFooter img{
+ height: 10vh;
+}
+
+.social{
+    margin: 5px;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.social:hover{
+    color: blue;
+}
+.boxFooter span{
+    font-size: 20px;
+}

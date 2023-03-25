@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import axios from "axios";
-import { htmlElement, apiUrLogin } from "./types/types";
+import { htmlElement } from "./types/types";
 import { useNavigate } from "react-router-dom";
 import "./login.css";
+import { apiUrLogin } from "../../../Apis/apis";
 
 function Login() {
   const [user, setUSer] = useState("");
