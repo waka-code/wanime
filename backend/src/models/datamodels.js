@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const mongoosePaginate = require("mongoose-paginate-v2");
 
 const userSchema = mongoose.Schema({
   title: {
@@ -20,7 +21,9 @@ const userSchema = mongoose.Schema({
   video: {
     type: String,
     required: true,
-  }
+  },
 });
+
+userSchema.plugin(mongoosePaginate);
 
 module.exports = mongoose.model("data", userSchema);

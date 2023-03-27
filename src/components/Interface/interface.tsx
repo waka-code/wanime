@@ -6,3 +6,4 @@ export interface IObject {
     img: string;
     video: string;
   }
+

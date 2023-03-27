@@ -15,7 +15,7 @@ router.post("/data", (req, res) => {
 // get all data
 router.get("/data", (req, res) => {
   userSchema
-    .find()
+    .paginate()
     .then((data) => res.json(data))
     .catch((error) => res.json({ message: error }));
 });

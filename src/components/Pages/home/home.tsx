@@ -2,16 +2,18 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import "./home.css";
 import { IObject } from "../../Interface/interface";
-import ReactPlayer from "react-player";
 import { AiOutlineInstagram } from "react-icons/ai";
 import { apiUrlData } from "../../../Apis/apis";
+import ListImag from "./listImg/ListImag";
+import ListVideo from "./listVideo/ListVideo";
+import ListNameAnime from "./listName/ListNameAnime";
 
 function Home() {
   const [dataName, setDataName] = useState<IObject[]>([]);
 
   const callData = async () => {
     const res = await axios.get(apiUrlData);
-    setDataName(res.data);
+    setDataName(res.data.docs);
   };
 
   useEffect(() => {
@@ -26,43 +28,11 @@ function Home() {
           <AiOutlineInstagram />
         </article>
         <h2>List</h2>
-        <div className="listTitle">
-          {dataName.map((items) => {
-            return (
-              <span className="titleName">
-                {items.title}
-                <br />
-              </span>
-            );
-          })}
-        </div>
+        <ListNameAnime dataName={dataName} />
       </section>
       <section className="boxCatalogo">
-        <article className="boxVideo">
-          {dataName.map((items) => {
-            return (
-              <div className="video">
-                <div className="title">{items.title}</div>
-                <ReactPlayer
-                  className="react-player"
-                  url={items.video}
-                  width="100%"
-                  height="auto"
-                />
-              </div>
-            );
-          })}
-        </article>
-        <article className="boxImg">
-          {dataName.map((items) => {
-            return (
-              <div className="boxImgTitle">
-                <span>{items.title}</span>
-                <img src={items.img} alt="logoImg" id="imgBox" />
-              </div>
-            );
-          })}
-        </article>
+        <ListVideo dataName={dataName} />
+        <ListImag dataName={dataName} />
       </section>
     </div>
   );

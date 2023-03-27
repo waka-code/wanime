@@ -34,21 +34,27 @@
 }
 .listTitle {
   font-size: 20px;
-  overflow: auto;
   height: 75%;
   padding: 10px;
 }
 .titleName {
+  display: flex;
+  justify-content: space-between;
   line-height: 40px;
   cursor: pointer;
   display: flex;
-  padding: 5px;
-
+  padding: 4px;
+  width: auto;
+  text-decoration: none;
+  color: #fff;
+}
+.titleName p{
   text-overflow: ellipsis;
   overflow: hidden;
-  width: 100%;
+  width: 230px;
   white-space: nowrap;
 }
+
 .titleName:hover {
   background: rgba(255, 255, 255, 0.25);
   backdrop-filter: blur(4px);
@@ -58,7 +64,7 @@
 }
 
 .boxCatalogo {
-  width:75%;
+  width: 75%;
   height: 100%;
   background: rgba(11, 78, 140, 0.25);
   backdrop-filter: blur(4px);
@@ -68,17 +74,13 @@
   padding: 5px;
   color: #fff;
   overflow: auto;
-
 }
 .boxVideo {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   gap: 10px;
   padding: 10px;
-  overflow: auto;
-  height: 30%;
-  height: 100vh;
-  overflow: auto;
+  height: 100%;
 }
 .video {
   background: rgba(255, 255, 255, 0.25);
@@ -87,6 +89,7 @@
   border: 3px solid rgba(255, 255, 255, 0.18);
   border-radius: 10px;
   width: 100%;
+  height: 28vh;
 }
 .video .title {
   color: #fff;
@@ -99,13 +102,12 @@
 }
 .boxImg {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  overflow: auto;
+  grid-template-columns: repeat(5, 1fr);
   gap: 11px;
-  height: 100vh;
+  height: 100%;
   padding: 10px;
 }
-.boxImgTitle{
+.boxImgTitle {
   display: flex;
   flex-direction: column;
   background: rgba(255, 255, 255, 0.25);
@@ -116,22 +118,29 @@
   padding: 10px 0;
   height: 40vh;
   width: 100%;
+  text-decoration: none;
   cursor: pointer;
+  transition: all 0.5s ease ;
 }
 
-.boxImgTitle span{
+.boxImgTitle:hover {
+  background: rgba(139, 8, 8, 0.25);
+  transform: scale(0.9);
+}
+
+.boxImgTitle span {
   color: #fff;
   font-size: 16px;
   text-overflow: ellipsis;
   overflow: hidden;
   width: 130px;
   white-space: nowrap;
-  text-align: center;
   padding: 5px;
 }
 
- #imgBox {
+#imgBox {
   width: 100%;
   height: 100%;
 }
+
 

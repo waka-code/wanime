@@ -1,8 +1,9 @@
 .boxDescription {
-  height: auto;
+  height: 135%;
   position: relative;
-  top: 85px;
+  top: 75px;
   color: #fff;
+
 }
 .boxImgPersonaje {
   display: flex;
@@ -40,10 +41,10 @@
   border-radius: 10px;
 }
 
-.boxImgGender article {
+.boxImgGender article { 
   width: 100%;
   text-align: center;
-  height: 5vh;
+  height: 7vh;
   display: flex;
   font-size: 18px;
   align-items: center;
@@ -53,6 +54,7 @@
   -webkit-backdrop-filter: blur(4px);
   border: 1px solid rgba(255, 255, 255, 0.18);
   border-radius: 10px;
+  margin: 15px 0;
 }
 
 .boxDescriptions {
@@ -74,6 +76,12 @@
 .boxDescriptions section span{
     font-size: 30px;
   }
+
+  .gender{
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+
+  }
   .boxVideoDescript h3{
     font-size: 25px;
   }
@@ -89,3 +97,7 @@
     border-radius: 10px;
     padding: 15px;
   }
+
+  .boxDescription .boxFooter{
+    top: 95px;
+}

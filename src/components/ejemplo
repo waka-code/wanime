@@ -1,4 +1,4 @@
-import { useState } from 'react';
+/*import { useState } from 'react';
 import axios from 'axios';
 
 function Login() {
@@ -96,3 +96,101 @@ app.post("/login", async (req, res) => {
 app.listen(port, () => {
   console.log(`Server listening at http://localhost:${port}`);
 });
+
+
+const express = require('express');
+const mongoose = require('mongoose');
+
+const app = express();
+
+// Conexión a la base de datos de MongoDB
+mongoose.connect('mongodb://localhost/my_database', {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
+
+// Definición del modelo de datos
+const bookSchema = new mongoose.Schema({
+  title: String,
+  author: String,
+  genre: String,
+});
+
+const Book = mongoose.model('Book', bookSchema);
+
+// Ruta para obtener todos los libros con paginación
+app.get('/books', async (req, res) => {
+  const page = parseInt(req.query.page) || 1;
+  const limit = parseInt(req.query.limit) || 10;
+  const skip = (page - 1) * limit;
+
+  try {
+    const books = await Book.find().skip(skip).limit(limit);
+    const count = await Book.countDocuments();
+
+    res.json({
+      books,
+      totalPages: Math.ceil(count / limit),
+      currentPage: page,
+    });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Error al obtener los libros.' });
+  }
+});
+
+// Iniciar el servidor
+app.listen(3000, () => {
+  console.log('Servidor iniciado en http://localhost:3000');
+});
+
+
+import { useState, useEffect } from 'react';
+import axios from 'axios';
+
+function App() {
+  const [books, setBooks] = useState([]);
+  const [totalPages, setTotalPages] = useState(0);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [limit, setLimit] = useState(10);
+
+  useEffect(() => {
+    const fetchBooks = async () => {
+      const response = await axios.get('/books', {
+        params: {
+          page: currentPage,
+          limit: limit,
+        },
+      });
+      setBooks(response.data.books);
+      setTotalPages(response.data.totalPages);
+    };
+    fetchBooks();
+  }, [currentPage, limit]);
+
+  const handlePrevPage = () => {
+    setCurrentPage((prevPage) => prevPage - 1);
+  };
+
+  const handleNextPage = () => {
+    setCurrentPage((prevPage) => prevPage + 1);
+  };
+
+  return (
+    <div>
+      <h1>Lista de libros</h1>
+      <ul>
+        {books.map((book) => (
+          <li key={book._id}>
+            {book.title} - {book.author} - {book.genre}
+          </li>
+        ))}
+      </ul>
+      <div>
+        <button onClick={handlePrevPage} disabled={currentPage === 1}>
+          Anterior
+        </button>
+        <span>
+          Página {currentPage} de {total
+
+*/

@@ -15,7 +15,7 @@ function DescriptionAnimes() {
     const searchData = async () => {
       const res = await axios.get(`${apiUrlData}/${_id}`);
       setAnimesDescript(res.data);
-      console.log(res.data);
+      console.log(res.data.docs);
     };
 
     searchData();
@@ -29,18 +29,22 @@ function DescriptionAnimes() {
       <section className="boxGender">
         <section className="boxImgGender">
           <img src={animesDescript?.img} alt={animesDescript?.title} />
-          <article>{animesDescript?.gender}</article>
+          <article>{animesDescript?.title}</article>
         </section>
         <section className="boxDescriptions">
-          <section><span>Sinpsis</span><article>{animesDescript?.description}</article></section>
+          <section>
+            <span>Sinopsis</span>
+            <article className="gender">{animesDescript?.gender}</article>
+            <article>{animesDescript?.description}</article>
+          </section>
           <article className="boxVideoDescript">
-          <h3>Trailer</h3>
-          <ReactPlayer
-                  className="react-player"
-                  url={animesDescript?.video}
-                  width="auto"
-                  height="95%"
-                />
+            <h3>Trailer</h3>
+            <ReactPlayer
+              className="react-player"
+              url={animesDescript?.video}
+              width="auto"
+              height="95%"
+            />
           </article>
         </section>
       </section>
