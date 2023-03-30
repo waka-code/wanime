@@ -48,7 +48,7 @@
 }
 
 .boxMenuUl .li:hover {
-  color: #000000f3;
+  color: #807e7e;
 }
 .boxMenuInput {
   display: flex;
@@ -102,7 +102,42 @@
   border: 1px solid rgba(0, 0, 0, 0.795);
 }
 
-.boxMenuInput .menuBtn .li{
+.boxMenuInput .menuBtn .li {
   color: #fff;
   text-decoration: none;
+}
+.boxSearchAnimeByNAme {
+  position: fixed;
+  top: 120%;
+  left: 60%;
+  width: 25vw;
+  height: auto;
+  padding: 15px;
+
+  background: rgba(11, 78, 140, 0.842);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+.boxShowComponent {
+  text-decoration: none;
+}
+
+.boxShowComponent section {
+  color: #ffffff;
+  font-size: 20px;
+  line-height: 30px;
+  padding:5px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  width: 100%;
+  white-space: nowrap;
+}
+.boxShowComponent section:hover {
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border: 2px solid rgba(255, 255, 255, 0.18);
+  color: #000;
 }

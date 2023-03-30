@@ -2,10 +2,10 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 import Home from '../../Pages/home/home'
 import ListAnime from '../../Pages/listAnime/listAnime'
-import Login from '../../Pages/Login/login'
-import Registe from "../../Pages/Login/Registe";
+import Login from '../../Pages/RegistrationAndLoginData/Login/login'
+import Register from "../../Pages/RegistrationAndLoginData/Register/Register";
 import HomeUser from "../../Pages/HomeUser/HomeUser";
-import DescriptionAnimes from "../../Pages/descriptionAnimes/descriptionAnimes";
+import DescriptionAnimes from "../../Pages/DescriptionAnimes/DescriptionAnimes";
 
 function routePage() {
   return (
@@ -15,7 +15,7 @@ function routePage() {
         <Route path="/HomeUser" element={<HomeUser />} />
         <Route path="/list" element={<ListAnime />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/Register" element={<Registe />} />
+        <Route path="/Register" element={<Register />} />
         <Route path="/:_id" element={<DescriptionAnimes />} />
       </Routes>
   );

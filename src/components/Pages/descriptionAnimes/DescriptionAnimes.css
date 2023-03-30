@@ -1,9 +1,8 @@
 .boxDescription {
-  height: 135%;
   position: relative;
   top: 75px;
   color: #fff;
-
+  height: 100%;
 }
 .boxImgPersonaje {
   display: flex;
@@ -28,6 +27,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
+  height: auto;
 }
 .boxImgGender {
   position: relative;
@@ -98,6 +98,4 @@
     padding: 15px;
   }
 
-  .boxDescription .boxFooter{
-    top: 95px;
-}
+ 

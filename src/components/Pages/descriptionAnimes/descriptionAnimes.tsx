@@ -1,25 +1,10 @@
-import axios from "axios";
-import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
-import { apiUrlData } from "../../../Apis/apis";
-import { IObject } from "../../Interface/interface";
 import "./DescriptionAnimes.css";
 import logoPersonaje from "../../../img/logoPersonaje.png";
 import ReactPlayer from "react-player";
+import DescriptionAnimeLogic from "./DescriptionAnimeLogic";
 
-function DescriptionAnimes() {
-  const { _id } = useParams();
-  const [animesDescript, setAnimesDescript] = useState<IObject>();
-
-  useEffect(() => {
-    const searchData = async () => {
-      const res = await axios.get(`${apiUrlData}/${_id}`);
-      setAnimesDescript(res.data);
-      console.log(res.data.docs);
-    };
-
-    searchData();
-  }, [_id]);
+export default function DescriptionAnimes() {
+  const { animesDescript } = DescriptionAnimeLogic();
 
   return (
     <div className="boxDescription">
@@ -52,4 +37,3 @@ function DescriptionAnimes() {
   );
 }
 
-export default DescriptionAnimes;

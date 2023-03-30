@@ -6,18 +6,42 @@ const router = express.Router();
 // create data
 router.post("/data", (req, res) => {
   const addData = userSchema(req.body);
+
   addData
     .save()
     .then((data) => res.json(data))
     .catch((error) => res.json({ message: error }));
 });
 
+// create data All
+/*router.post("/dataall", (req, res) => {
+  const addData = new userSchema(req.body);
+
+  addData.save((err, result) => {
+    if (err) {
+      console.log(err);
+      res.status(500).send("Error al agregar elementos");
+    } else {
+      console.log("Elementos agregados correctamente");
+      res.status(200).send(result);
+    }
+  });
+});*/
+
 // get all data
 router.get("/data", (req, res) => {
-  userSchema
-    .paginate()
-    .then((data) => res.json(data))
-    .catch((error) => res.json({ message: error }));
+  const { page, limit } = req.query;
+  try {
+    userSchema
+      .paginate({}, { page: page || 1, limit: limit || 10 })
+      .then((data) => res.json(data))
+      .catch((error) => res.json({ message: error }));
+  } catch (error) {
+    console.error(error);
+    return res
+      .status(500)
+      .json({ message: "Ocurrió un error en el servidor." });
+  }
 });
 
 // get a data

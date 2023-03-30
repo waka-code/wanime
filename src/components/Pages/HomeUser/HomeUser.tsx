@@ -1,29 +1,26 @@
-import React, { useEffect, useState } from "react";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 import "./HomeUser.css";
 
 function HomeUser() {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-  useEffect(() => {
-    const token = localStorage.getItem("token");
+  const history = useNavigate();
+  const url = "http://localhost:8000/createUser/logout";
 
-    if (token) {
-      // Si el usuario tiene un token de autenticación, establecer isLoggedIn en true
-      setIsLoggedIn(true);
-    }
-  }, []);
-
-  function logout() {
-    // Eliminar el token de autenticación del almacenamiento local del navegador
-    localStorage.removeItem("token");
+  function LogoutButton() {
+    fetch(url)
+      .then(() => {
+        history("/login");
+      })
+      .catch((error) => {
+        console.error("Logout failed:", error);
+      });
   }
-  return <div className="homeUsercss">
-    {
-        isLoggedIn
-    }
-    <button onClick={logout}>cerrar</button>
-  </div>;
+
+  return (
+    <div className="homeUsercss">
+      <button onClick={LogoutButton}>cerrar</button>
+    </div>
+  );
 }
 
-
 export default HomeUser;
-

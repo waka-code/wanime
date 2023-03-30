@@ -1,12 +1,14 @@
-import React from "react";
 import logo from "../..//../img/logo.png";
 import { FcSearch } from "react-icons/fc";
 import "./menuNavegation.css";
 import { NavLink } from "react-router-dom";
+import IsVisible from "./IsVisible";
 
-function menuNavegation() {
+function MenuNavegation() {
+  const { showComponent, handleInputChange, datass, setShowComponent } = IsVisible();
+
   return (
-    <nav className="menuuNavegation">
+    <nav className="menuuNavegation" onClick={() => setShowComponent(false)}>
       <div className="boxLogo">
         <img src={logo} alt="logo" />
         <h3>animeJK</h3>
@@ -23,7 +25,7 @@ function menuNavegation() {
 
         <div className="boxMenuInput">
           <section>
-            <input type="text" />
+            <input type="text" onChange={handleInputChange} />
             <FcSearch className="icono" />
           </section>
 
@@ -34,8 +36,23 @@ function menuNavegation() {
           </button>
         </div>
       </div>
+      {showComponent && (
+        <div className="boxSearchAnimeByNAme">
+          {datass.map((items) => {
+            return (
+              <NavLink
+                to={`/${items._id}`}
+                key={items._id}
+                className="boxShowComponent"
+              >
+                <section>{items.title}</section>
+              </NavLink>
+            );
+          })}
+        </div>
+      )}
     </nav>
   );
 }
 
-export default menuNavegation;
+export default MenuNavegation;

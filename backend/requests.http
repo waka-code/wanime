@@ -9,7 +9,34 @@ Content-Type: application/json
   "img":"https://cdn.oneesports.gg/cdn-data/2022/01/Bleach_AnimeSennenKessenHen-1024x576.webp",
   "video":"https://www.youtube.com/watch?v=fzR82oXbjnY&t=77s"
 }
+/*
+###
+POST http://localhost:9000/api/dataall HTTP/1.1
+Content-Type: application/json
 
+[
+  {
+  "title": "Bleach",
+  "description":"Kurosaki Ichigo es un estudiante de instituto de 15 años, que tiene una peculiaridad: es capaz de ver, oír y hablar con fantasmas. Pero no sabe hasta dónde puede abarcar la clasificación de espíritus, ni lo que conlleva el saberlo. Un buen día, una extraña chica de pequeña estatura que viste ropas negras de samurai entra en su cuarto. Se llama Rukia Kuchiki, y es una Shinigami (Dios de la Muerte). Ante la incredulidad de Ichigo, le explica que su trabajo es mandar a las almas buenas o plus a un lugar llamado la Sociedad de Almas, y eliminar a las almas malignas o hollows. Luego junto a Inoue Orihime, Ishida Ury y Sado Yasutora se veran envueltos en diferentes batallas, las cuales iran desarrollando sus diferentes habilidades que le otorgaran a cada uno su importancia en la serie.",
+  "gender": "Shonen - Comedia - Accion - Sobrenatural - Superpoderes",
+  "img":"https://cdn.oneesports.gg/cdn-data/2022/01/Bleach_AnimeSennenKessenHen-1024x576.webp",
+  "video":"https://www.youtube.com/watch?v=fzR82oXbjnY&t=77s"
+},
+{
+  "title": "Bleach",
+  "description":"Kurosaki Ichigo es un estudiante de instituto de 15 años, que tiene una peculiaridad: es capaz de ver, oír y hablar con fantasmas. Pero no sabe hasta dónde puede abarcar la clasificación de espíritus, ni lo que conlleva el saberlo. Un buen día, una extraña chica de pequeña estatura que viste ropas negras de samurai entra en su cuarto. Se llama Rukia Kuchiki, y es una Shinigami (Dios de la Muerte). Ante la incredulidad de Ichigo, le explica que su trabajo es mandar a las almas buenas o plus a un lugar llamado la Sociedad de Almas, y eliminar a las almas malignas o hollows. Luego junto a Inoue Orihime, Ishida Ury y Sado Yasutora se veran envueltos en diferentes batallas, las cuales iran desarrollando sus diferentes habilidades que le otorgaran a cada uno su importancia en la serie.",
+  "gender": "Shonen - Comedia - Accion - Sobrenatural - Superpoderes",
+  "img":"https://cdn.oneesports.gg/cdn-data/2022/01/Bleach_AnimeSennenKessenHen-1024x576.webp",
+  "video":"https://www.youtube.com/watch?v=fzR82oXbjnY&t=77s"
+},
+{
+  "title": "Bleach",
+  "description":"Kurosaki Ichigo es un estudiante de instituto de 15 años, que tiene una peculiaridad: es capaz de ver, oír y hablar con fantasmas. Pero no sabe hasta dónde puede abarcar la clasificación de espíritus, ni lo que conlleva el saberlo. Un buen día, una extraña chica de pequeña estatura que viste ropas negras de samurai entra en su cuarto. Se llama Rukia Kuchiki, y es una Shinigami (Dios de la Muerte). Ante la incredulidad de Ichigo, le explica que su trabajo es mandar a las almas buenas o plus a un lugar llamado la Sociedad de Almas, y eliminar a las almas malignas o hollows. Luego junto a Inoue Orihime, Ishida Ury y Sado Yasutora se veran envueltos en diferentes batallas, las cuales iran desarrollando sus diferentes habilidades que le otorgaran a cada uno su importancia en la serie.",
+  "gender": "Shonen - Comedia - Accion - Sobrenatural - Superpoderes",
+  "img":"https://cdn.oneesports.gg/cdn-data/2022/01/Bleach_AnimeSennenKessenHen-1024x576.webp",
+  "video":"https://www.youtube.com/watch?v=fzR82oXbjnY&t=77s"
+}
+]*/
 ###
 GET http://localhost:9000/api/data HTTP/1.1
 
@@ -38,6 +65,15 @@ Content-Type: application/json
   "user":"wakacode",
   "pass": "123456"
 }
+###
+POST http://localhost:8000/createUser/login HTTP/1.1
+Content-Type: application/json
+
+{
+  "user":"wakacode",
+  "pass": "123456"
+}
+
 ###
 POST http://localhost:8000/createUser/login HTTP/1.1
 Content-Type: application/json

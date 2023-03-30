@@ -2,9 +2,11 @@
   display: flex;
   gap: 15px;
   padding: 15px;
-  top: 12%;
+  height: auto;
+  top: 10%;
   position: relative;
 }
+
 
 .boxTitle {
   width: 25%;
@@ -27,8 +29,12 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  font-size: 20px;
 }
-
+.boxSocial a{
+  text-decoration: none;
+  color: #fff;
+}
 .boxTitle h2 {
   margin: 5px;
 }
