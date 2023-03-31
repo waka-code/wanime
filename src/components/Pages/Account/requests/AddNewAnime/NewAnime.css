@@ -1,0 +1,71 @@
+.boxNewAnime {
+  height: 90vh;
+  width: 100%;
+  position: fixed;
+  top: 10%;
+
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.boxNewAnime form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: 2px solid;
+    height: 80vh;
+    width: 100%;
+}
+
+.boxNewAnime form span{
+  font-size: 30px;
+  color: #fff;
+}
+.boxNewAnime form input{
+    width: 30%;
+    margin: 10px;
+    height: 5vh;
+    padding: 5px;
+    outline: none;
+    
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.boxNewAnime form textarea{
+    width: 30%;
+    padding: 5px;
+    height: 40%;
+    outline: none;
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.boxNewAnime form button{
+    width: 30%;
+    height: 5vh;
+    margin: 5px;
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    cursor: pointer;
+}
+
+.boxNewAnime form button:hover{
+   color: #fff;
+    background: rgba(0, 0, 0, 0.25);
+ 
+}
+

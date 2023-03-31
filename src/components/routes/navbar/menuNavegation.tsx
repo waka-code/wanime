@@ -3,9 +3,11 @@ import { FcSearch } from "react-icons/fc";
 import "./menuNavegation.css";
 import { NavLink } from "react-router-dom";
 import IsVisible from "./IsVisible";
+import { MdOnlinePrediction } from "react-icons/md";
 
 function MenuNavegation() {
-  const { showComponent, handleInputChange, datass, setShowComponent } = IsVisible();
+  const { showComponent, handleInputChange, datass, setShowComponent, token } =
+    IsVisible();
 
   return (
     <nav className="menuuNavegation" onClick={() => setShowComponent(false)}>
@@ -13,7 +15,7 @@ function MenuNavegation() {
         <img src={logo} alt="logo" />
         <h3>animeJK</h3>
       </div>
-      <div className="boxSearch">
+      <div className={`${token ? "boxSearchs" : "boxSearch"}`}>
         <ul className="boxMenuUl">
           <NavLink to="/home" className="li">
             HOME
@@ -21,6 +23,11 @@ function MenuNavegation() {
           <NavLink to="/list" className="li">
             LIST ANIME
           </NavLink>
+          {token ? (
+            <NavLink to="/HomeUser" className="li">
+              ACCOUNT
+            </NavLink>
+          ) : null}
         </ul>
 
         <div className="boxMenuInput">
@@ -28,12 +35,18 @@ function MenuNavegation() {
             <input type="text" onChange={handleInputChange} />
             <FcSearch className="icono" />
           </section>
-
-          <button className="menuBtn">
-            <NavLink to="/login" className="li">
-              LOGIN
-            </NavLink>
-          </button>
+          {token ? (
+            <span className="menuicons">
+              {" "}
+              <MdOnlinePrediction className="icon" /> online
+            </span>
+          ) : (
+            <button className="menuBtn">
+              <NavLink to="/login" className="li">
+                LOGIN
+              </NavLink>
+            </button>
+          )}
         </div>
       </div>
       {showComponent && (

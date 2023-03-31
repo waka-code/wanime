@@ -1,0 +1,53 @@
+.boxAccountr {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background: url("../../../img/kaneki.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  top: 11%;
+}
+
+.boxNavAccount {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  padding: 10px;
+  height: 100%;
+  line-height: 40px;
+
+  background: rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+.navAccount {
+  text-decoration: none;
+  font-size: 20px;
+  padding: 5px;
+  color: #fff;
+}
+.navAccount:hover {
+  background-color: rgb(0, 0, 0);
+}
+
+.boxNavAccount button {
+  width: 50%;
+  height: 5vh;
+  outline: none;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  margin: 15px 0;
+  font-size: 18px;
+}
+
+
+.boxAcountRoute{
+    width: 100%;
+    height: 100vh;
+}

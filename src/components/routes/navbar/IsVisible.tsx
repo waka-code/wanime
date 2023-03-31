@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useState } from "react";
+import {  useState } from "react";
 import { apiUrlData } from "../../../Apis/apis";
 import { IObject } from "../../Interface/interface";
 import { Events } from "../../Pages/RegistrationAndLoginData/types/types";
@@ -7,7 +7,8 @@ import { Events } from "../../Pages/RegistrationAndLoginData/types/types";
 export default function IsVisible() {
   const [showComponent, setShowComponent] = useState(false);
   const [datass, setDatass] = useState<IObject[]>([]);
-
+  const token = localStorage.getItem("token");
+  
   const handleSearch = async () => {
     setShowComponent(true);
   };
@@ -24,11 +25,13 @@ export default function IsVisible() {
     console.log(filterData);
   };
 
+
   return {
     setShowComponent,
     showComponent,
     handleSearch,
     handleInputChange,
     datass,
+    token
   };
 }

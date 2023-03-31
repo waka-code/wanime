@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { apiUrlCreateUser } from "../../../../Apis/apis";
 import { htmlElement } from "../types/types";
 
-function RegisterLogic() {
+export default function RegisterLogic() {
   const [name, setName] = useState("");
   const [user, setUSer] = useState("");
   const [pass, setPass] = useState("");
@@ -26,5 +26,3 @@ function RegisterLogic() {
   };
   return { setName, setUSer, setPass, errorMessage, handleSubmit };
 }
-
-export default RegisterLogic;

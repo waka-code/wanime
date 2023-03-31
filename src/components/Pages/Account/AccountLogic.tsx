@@ -1,26 +1,24 @@
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import "./HomeUser.css";
+import { logout } from "../../../Apis/apis";
+import "./AccountLogic.css";
 
-function HomeUser() {
+function AccountLogic() {
   const history = useNavigate();
-  const url = "http://localhost:8000/createUser/logout";
-
   function LogoutButton() {
-    fetch(url)
+    axios
+      .post(logout)
       .then(() => {
+        localStorage.removeItem("token");
         history("/login");
+        window.location.reload();
       })
       .catch((error) => {
         console.error("Logout failed:", error);
       });
   }
 
-  return (
-    <div className="homeUsercss">
-      <button onClick={LogoutButton}>cerrar</button>
-    </div>
-  );
+  return {LogoutButton}
 }
 
-export default HomeUser;
+export default AccountLogic;
