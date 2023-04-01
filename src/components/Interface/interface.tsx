@@ -7,3 +7,9 @@ export interface IObject {
     video?: string;
   }
 
+
+  export interface IObjectUser {
+    name?: string;
+    user?: string;
+    pass?: string;
+  }

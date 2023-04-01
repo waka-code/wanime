@@ -10,9 +10,6 @@ export default function AccountRoute() {
         <NavLink className="navAccount" to="/HomeUser/GetAnime">
           List of Anime
         </NavLink>
-        <NavLink className="navAccount" to="/HomeUser/GetUser">
-          List of User
-        </NavLink>
         <NavLink className="navAccount" to="/HomeUser/Post">
             Add New Anime
         </NavLink>

@@ -5,6 +5,8 @@ const bcrypt = require("bcrypt");
 
 const routerUser = express.Router();
 
+
+
 // create user
 routerUser.post("/userData", async (req, res) => {
   const { name, user, pass } = req.body;
@@ -42,11 +44,9 @@ routerUser.post("/login", async (req, res) => {
 
   try {
     const userName = await userDataSchema.findOne({ user });
-
     if (!userName) {
       return res.status(400).json({ error: `Invalid credentials ${userName}` });
     }
-    //falta arreglar algo aqui error en tipos de datos creo
     const isPasswordValid = await bcrypt.compare(pass, userName?.pass ?? "");
 
     if (!isPasswordValid) {
@@ -62,9 +62,9 @@ routerUser.post("/login", async (req, res) => {
   }
 });
 
+//Logout
 routerUser.post("/logout", async (req, res) => {
   try {
-    // Elimina el token del usuario al cerrar sesión
     res.clearCookie("token");
     res.status(200).send("Logged out successfully");
   } catch (error) {

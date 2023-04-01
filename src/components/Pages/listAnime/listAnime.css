@@ -18,11 +18,12 @@
   margin: 0 20px;
   padding: 10px;
   font-size: 18px;
-  background: rgba(255, 255, 255, 0.25);
+  background: rgba(4, 15, 26, 0.25);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.18);
+  color: #fff;
 }
 
 .boxFormLsearch section {
@@ -36,22 +37,24 @@
   height: 5vh;
   border-radius: 15px;
   margin: 2px;
-  background: rgba(255, 255, 255, 0.25);
+  background: rgba(4, 15, 26, 0.25);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.18);
   cursor: pointer;
+  color: #fff;
 }
 .boxFormLsearch section button:hover {
   background: rgba(255, 255, 255, 0.788);
+  color: #000;
 }
 
 .boxFormLsearch span {
   font-size: 20px;
   color: #fff;
   padding: 5px;
-  background: rgba(255, 255, 255, 0.25);
+  background: rgba(4, 15, 26, 0.25);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
   border-radius: 10px;
@@ -73,7 +76,7 @@
   height: 40vh;
   width: 100%;
 
-  background: rgba(255, 255, 255, 0.25);
+  background: rgba(4, 15, 26, 0.25);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
   border-radius: 10px;

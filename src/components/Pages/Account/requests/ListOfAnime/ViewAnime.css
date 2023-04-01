@@ -16,7 +16,7 @@
 }
 
 .viewAnimeImg {
-  height: 25vh;
+  height: 22vh;
   width: 100%;
 }
 
@@ -26,13 +26,15 @@
 }
 
 .boxAnime {
-  background: rgba(255, 255, 255, 0.25);
+  background: rgba(4, 15, 26, 0.25);
   backdrop-filter: blur(4px);
+  border: 3px solid rgba(4, 15, 26, 0.644);
   -webkit-backdrop-filter: blur(4px);
   text-align: center;
   padding: 5px;
   margin: 5px;
   width: 18.9vw;
+  color: #fff;
 }
 
 .viewAnimeTxt span {
@@ -59,13 +61,18 @@
   height: 3vh;
   width: 6vw;
   cursor: pointer;
-  background: rgba(255, 255, 255, 0.25);
+  background: rgba(4, 15, 26, 0.25);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
   border: 1px solid rgba(255, 255, 255, 0.18);
+  color: #fff;
 }
 
 .boxBrn button:hover {
-    color: #fff;
-    background: rgba(0, 0, 0, 0.25);
-  }
+  color: #fff;
+  background: rgba(134, 134, 134, 0.25);
+}
+.BoxUpdate{
+  text-decoration: none;
+  color: #fff;
+}

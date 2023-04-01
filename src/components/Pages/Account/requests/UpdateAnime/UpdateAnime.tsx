@@ -1,8 +1,7 @@
 import React from "react";
-import "./NewAnime.css";
-import NewAnimeLogic from "./NewAnimeLogic";
+import UpdateAnimeLogic from "./UpdateAnimeLogic";
 
-export default function NewAnime() {
+export default function UpdateAnime() {
   const {
     setTitle,
     setDescription,
@@ -10,43 +9,41 @@ export default function NewAnime() {
     setImg,
     setVideo,
     errorMessage,
-    handleSubmit,
-    title,
-    description,
-    gender,
-    img,
-    video,
-  } = NewAnimeLogic();
+    handleSubmitReserch,
+    handleSubmits,
+  } = UpdateAnimeLogic();
 
   return (
     <div className="boxNewAnime">
-      <form onSubmit={handleSubmit}>
-        <span>New Anime</span>
+      <form onSubmit={handleSubmitReserch}>
+        <span>Update</span>
         <input
           type="text"
-          value={title}
+          placeholder="Title"
           onChange={(e) => setTitle(e.target.value)}
         />
         <input
           type="text"
-          value={gender}
+          placeholder="Gender"
           onChange={(e) => setGender(e.target.value)}
         />
         <input
           type="text"
-          value={img}
+          placeholder="Img"
           onChange={(e) => setImg(e.target.value)}
         />
         <input
           type="text"
-          value={video}
+          placeholder="Video"
           onChange={(e) => setVideo(e.target.value)}
         />
         <textarea
-          value={description}
+          placeholder="Description"
           onChange={(e) => setDescription(e.target.value)}
         />
-        <button type="submit">Submit</button>
+        <button type="submit" onClick={handleSubmits}>
+          Update
+        </button>
       </form>
       {errorMessage && <p>{errorMessage}</p>}
     </div>

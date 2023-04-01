@@ -97,7 +97,6 @@
   cursor: pointer;
 
   background: rgba(11, 78, 140, 0.25);
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
   border-radius: 10px;
@@ -116,13 +115,13 @@
 }
 .boxSearchAnimeByNAme {
   position: fixed;
-  top: 120%;
+  top: 105%;
   left: 60%;
   width: 25vw;
   height: auto;
   padding: 15px;
 
-  background: rgba(11, 78, 140, 0.842);
+  background: rgba(4, 15, 26, 0.705);;
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
   border-radius: 10px;

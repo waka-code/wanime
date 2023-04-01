@@ -7,7 +7,7 @@ function ListImag(props: ChildProps) {
     <article className="boxImg">
       {props.dataName.map((items) => {
         return (
-          <NavLink to={`/${items._id}`} className="boxImgTitle">
+          <NavLink to={`/${items._id}`} key={items._id} className="boxImgTitle">
             <span>{items.title}</span>
             <img src={items.img} alt={items.title} id="imgBox" />
           </NavLink>

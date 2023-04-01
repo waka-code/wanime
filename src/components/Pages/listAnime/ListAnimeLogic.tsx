@@ -9,6 +9,7 @@ export default function ListAnimeLogic() {
   const [filteredSearch, setFilteredSearch] = useState<IObject[]>([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
+ 
   const handleSubmit = (e: Events) => e.preventDefault();
 
   useEffect(() => {
@@ -19,12 +20,19 @@ export default function ListAnimeLogic() {
       setSearch(res.data.docs);
       setFilteredSearch(res.data.docs);
       setTotalPages(res.data.totalPages);
-      
     };
 
     searchData();
   }, [currentPage]);
-
+/*
+  const dltElemnt = () => {
+    if (idx !== undefined) {
+      const newList = [...filteredSearch];
+      newList.splice(idx, 1);
+      setFilteredSearch(newList);
+    }
+  };
+*/
   const filterSearch = (e: Events) => {
     const data = e.target.value;
     e.preventDefault();
@@ -59,6 +67,6 @@ export default function ListAnimeLogic() {
     next,
     handleSubmit,
     setFilteredSearch,
-    Search
+    Search,
   };
 }

@@ -7,7 +7,7 @@ function ListVideo(props: ChildProps) {
     <article className="boxVideo">
       {props.dataName.map((items) => {
         return (
-          <div className="video">
+          <div className="video" key={items._id}>
             <div className="title">{items.title}</div>
             <ReactPlayer
               controls={true}

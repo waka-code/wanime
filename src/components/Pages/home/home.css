@@ -12,17 +12,17 @@
   width: 25%;
   height: 100vh;
 
-  background: rgba(11, 78, 140, 0.25);
+  background: rgba(4, 15, 26, 0.25);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
-  border: 3px solid rgba(255, 255, 255, 0.18);
+  border: 3px solid rgba(4, 15, 26, 0.25);
   border-radius: 10px;
   padding: 5px;
   color: #fff;
 }
 
 .boxSocial {
-  background: rgba(6, 37, 66, 0.664);
+  background: rgba(4, 15, 26, 0.671);
   height: 20%;
   display: flex;
   flex-direction: column;
@@ -62,20 +62,20 @@
 }
 
 .titleName:hover {
-  background: rgba(255, 255, 255, 0.25);
+  background: rgba(4, 15, 26, 0.25);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
-  border: 2px solid rgba(255, 255, 255, 0.18);
+  border: 2px solid rgba(4, 15, 26, 0.25);
   color: #000;
 }
 
 .boxCatalogo {
   width: 75%;
   height: 100%;
-  background: rgba(11, 78, 140, 0.25);
+  background: rgba(4, 15, 26, 0.25);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
-  border: 3px solid rgba(255, 255, 255, 0.18);
+  border: 3px solid rgba(4, 15, 26, 0.25);
   border-radius: 10px;
   padding: 5px;
   color: #fff;
@@ -89,10 +89,10 @@
   height: 100%;
 }
 .video {
-  background: rgba(255, 255, 255, 0.25);
+  background: rgba(4, 15, 26, 0.25);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
-  border: 3px solid rgba(255, 255, 255, 0.18);
+  border: 3px solid rgba(4, 15, 26, 0.25);
   border-radius: 10px;
   width: 100%;
   height: 28vh;
@@ -116,10 +116,10 @@
 .boxImgTitle {
   display: flex;
   flex-direction: column;
-  background: rgba(255, 255, 255, 0.25);
+  background: rgba(4, 15, 26, 0.25);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
-  border: 3px solid rgba(255, 255, 255, 0.18);
+  border: 3px solid rgba(4, 15, 26, 0.25);
   border-radius: 10px;
   padding: 10px 0;
   height: 40vh;

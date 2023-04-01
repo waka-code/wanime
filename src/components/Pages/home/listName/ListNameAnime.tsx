@@ -7,7 +7,7 @@ function ListNameAnime(props: ChildProps) {
     <div className="listTitle">
       {props.dataName.map((items) => {
         return (
-          <NavLink to={`/${items._id}`} className="titleName">
+          <NavLink to={`/${items._id}`} className="titleName" key={items._id}>
             <p>{items.title}</p>
             <br />
           </NavLink>
