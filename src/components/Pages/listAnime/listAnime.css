@@ -1,17 +1,17 @@
-.boxListAnime {
+.box_list_anime {
   top: 12%;
   position: relative;
   height: 100%;
 }
 
-.boxFormLsearch {
+.box_form_search {
   display: flex;
   align-items: center;
   justify-content: space-around;
   height: 15%;
 }
 
-.boxFormLsearch input {
+.box_form_search input {
   width: 30%;
   height: 40%;
   outline: none;
@@ -21,18 +21,18 @@
   background: rgba(4, 15, 26, 0.25);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
+  border: 1px solid rgba(4, 15, 26, 0.25);
   border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
   color: #fff;
 }
 
-.boxFormLsearch section {
+.box_form_search section {
   width: 15%;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.boxFormLsearch section button {
+.box_form_search section button {
   width: 100%;
   height: 5vh;
   border-radius: 15px;
@@ -40,35 +40,36 @@
   background: rgba(4, 15, 26, 0.25);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
+  border: 1px solid rgba(4, 15, 26, 0.25);
   border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
   cursor: pointer;
   color: #fff;
 }
-.boxFormLsearch section button:hover {
-  background: rgba(255, 255, 255, 0.788);
-  color: #000;
+.box_form_search section button:hover {
+  background: rgba(221, 226, 230, 0.568);
+  color: #000000;
+  border: 1px solid rgba(0, 0, 0, 0.795);
 }
 
-.boxFormLsearch span {
+.box_form_search span {
   font-size: 20px;
   color: #fff;
   padding: 5px;
   background: rgba(4, 15, 26, 0.25);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
+  border: 1px solid rgba(4, 15, 26, 0.25);
   border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
-.boxSearchAnime {
+.box_search_anime {
   padding: 10px;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 10px;
   height: 80vh;
 }
-.boxListSearch {
+.box_list_search {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -79,18 +80,18 @@
   background: rgba(4, 15, 26, 0.25);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
+  border: 1px solid rgba(4, 15, 26, 0.25);
   border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
   padding: 10px 0;
   text-decoration: none;
   transition: all 0.5s ease;
 }
 
-.boxListSearch:hover {
+.box_list_search:hover {
   transform: scale(0.9);
   background: rgba(139, 8, 8, 0.25);
 }
-.boxListSearch section {
+.box_list_search section {
   font-size: 18px;
   color: #fff;
   text-align: center;
@@ -101,7 +102,7 @@
   white-space: nowrap;
   cursor: pointer;
 }
-.boxListSearch img {
-  width: 100%;
+.box_list_search img {
+  max-width: 100%;
   height: 100%;
 }

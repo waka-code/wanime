@@ -1,15 +1,15 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { ChildProps } from "../InterfaceHome";
+import { ChildIsAnime } from "../InterfaceHome";
 
-function ListImag(props: ChildProps) {
+function ListImag(props: ChildIsAnime) {
   return (
-    <article className="boxImg">
+    <article className="box_img">
       {props.dataName.map((items) => {
         return (
-          <NavLink to={`/${items._id}`} key={items._id} className="boxImgTitle">
+          <NavLink to={`/${items._id}`} key={items._id} className="box_img_title">
             <span>{items.title}</span>
-            <img src={items.img} alt={items.title} id="imgBox" />
+            <img src={items.img} alt={items.title} id="img_box" />
           </NavLink>
         );
       })}

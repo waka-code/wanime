@@ -1,10 +1,10 @@
 import React from "react";
 import ReactPlayer from "react-player";
-import { ChildProps } from "../InterfaceHome";
+import { ChildIsAnime } from "../InterfaceHome";
 
-function ListVideo(props: ChildProps) {
+function ListVideo(props: ChildIsAnime) {
   return (
-    <article className="boxVideo">
+    <article className="box_video">
       {props.dataName.map((items) => {
         return (
           <div className="video" key={items._id}>

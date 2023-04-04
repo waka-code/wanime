@@ -1,20 +1,16 @@
 import axios from "axios";
 import { dltData } from "../../../../../Apis/apis";
-import ListAnimeLogic from "../../../listAnime/ListAnimeLogic";
+import { useCallback } from "react";
 
 function ViewAnimeLogic() {
-  const { setFilteredSearch, filteredSearch } = ListAnimeLogic();
-
-  const handleSubmit = async (idAnime: string | undefined) => {
-    setFilteredSearch(filteredSearch.filter((dltID) => dltID._id !== idAnime));
-
+  const handleSubmit = useCallback(async (idAnime: string | undefined) => {
     try {
       await axios.delete(`${dltData}${idAnime}`);
       console.log("eliminado");
     } catch {
       console.log("no se elimino el elemento");
     }
-  };
+  },[])
 
   return { handleSubmit };
 }

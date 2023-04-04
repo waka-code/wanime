@@ -1,8 +1,8 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import Home from "../../Pages/home/home";
-import ListAnime from "../../Pages/listAnime/listAnime";
-import Login from "../../Pages/RegistrationAndLoginData/Login/login";
+import Home from "../../Pages/home/Home";
+import ListAnime from "../../Pages/listAnime/ListAnime";
+import Login from "../../Pages/RegistrationAndLoginData/Login/Login";
 import Register from "../../Pages/RegistrationAndLoginData/Register/Register";
 import DescriptionAnimes from "../../Pages/DescriptionAnimes/DescriptionAnimes";
 import Account from "../../Pages/Account/Account";
@@ -20,6 +20,7 @@ export default function RoutePage() {
       <Route path="/login" element={<Login />} />
       <Route path="/Register" element={<Register />} />
       <Route path="/:_id" element={<DescriptionAnimes />} />
+      <Route path="/name/:title" element={<DescriptionAnimes />} />
       <Route path="/HomeUser/Post" element={<NewAnime />} />
       <Route path="/HomeUser/GetAnime" element={<ViewAnime />} />
       <Route path="/HomeUser/Update" element={<UpdateAnime />} />

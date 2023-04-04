@@ -1,4 +1,4 @@
-.boxViewAnime {
+.box_view_anime {
   position: fixed;
   top: 6%;
   display: flex;
@@ -8,24 +8,24 @@
   height: 100vh;
   overflow: auto;
 }
-.newAnime {
-  height: auto;
+.new_anime {
+  height: 80vh;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 5px;
 }
 
-.viewAnimeImg {
+.view_anime_img {
   height: 22vh;
   width: 100%;
 }
 
-.viewAnimeImg img {
+.view_anime_img img {
   height: 100%;
   width: 100%;
 }
 
-.boxAnime {
+.box_anime {
   background: rgba(4, 15, 26, 0.25);
   backdrop-filter: blur(4px);
   border: 3px solid rgba(4, 15, 26, 0.644);
@@ -34,29 +34,30 @@
   padding: 5px;
   margin: 5px;
   width: 18.9vw;
+  height: 37vh;
   color: #fff;
 }
 
-.viewAnimeTxt span {
+.view_anime_txt span {
   text-overflow: ellipsis;
   overflow: hidden;
   width: 100px;
 }
 
-.viewAnimeTxt p {
+.view_anime_txt p {
   text-overflow: ellipsis;
   overflow: hidden;
   width: 250px;
   white-space: nowrap;
 }
 
-.boxBrn {
+.box_btn {
   width: 100%;
   text-align: center;
   margin: 4px;
 }
 
-.boxBrn button {
+.box_btn button {
   margin: auto 10px;
   height: 3vh;
   width: 6vw;
@@ -68,11 +69,11 @@
   color: #fff;
 }
 
-.boxBrn button:hover {
+.box_btn button:hover {
   color: #fff;
   background: rgba(134, 134, 134, 0.25);
 }
-.BoxUpdate{
+.box_update{
   text-decoration: none;
   color: #fff;
 }

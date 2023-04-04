@@ -1,4 +1,4 @@
-.boxNewAnime {
+.box_new_anime {
   height: 90vh;
   width: 100%;
   position: fixed;
@@ -14,7 +14,7 @@
   flex-direction: column;
 }
 
-.boxNewAnime form{
+.box_new_anime form{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -24,11 +24,11 @@
     width: 100%;
 }
 
-.boxNewAnime form span{
+.box_new_anime form span{
   font-size: 30px;
   color: #fff;
 }
-.boxNewAnime form input{
+.box_new_anime form input{
     width: 30%;
     margin: 10px;
     height: 5vh;
@@ -42,7 +42,7 @@
     color: #fff;
 }
 
-.boxNewAnime form textarea{
+.box_new_anime form textarea{
     width: 30%;
     padding: 5px;
     height: 40%;
@@ -54,7 +54,7 @@
     color: #fff;
 }
 
-.boxNewAnime form button{
+.box_new_anime form button{
     width: 30%;
     height: 5vh;
     margin: 5px;
@@ -66,9 +66,14 @@
     cursor: pointer;
 }
 
-.boxNewAnime form button:hover{
+.box_new_anime form button:hover{
    color: #fff;
     background: rgba(0, 0, 0, 0.25);
  
+}
+
+.box_new_anime p{
+   font-size: 15px;
+   color: #fff;
 }
 

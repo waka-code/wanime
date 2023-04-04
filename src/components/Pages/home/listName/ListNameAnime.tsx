@@ -1,13 +1,13 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { ChildProps } from "../InterfaceHome";
+import { ChildIsAnimes } from "../InterfaceHome";
 
-function ListNameAnime(props: ChildProps) {
+export default function ListNameAnime(props: ChildIsAnimes) {
   return (
-    <div className="listTitle">
-      {props.dataName.map((items) => {
+    <div className="list_title">
+      {props.animeData.map((items) => {
         return (
-          <NavLink to={`/${items._id}`} className="titleName" key={items._id}>
+          <NavLink to={`/${items._id}`} className="title_anime" key={items._id}>
             <p>{items.title}</p>
             <br />
           </NavLink>
@@ -16,5 +16,3 @@ function ListNameAnime(props: ChildProps) {
     </div>
   );
 }
-
-export default ListNameAnime;

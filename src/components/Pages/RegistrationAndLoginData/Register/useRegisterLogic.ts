@@ -1,8 +1,9 @@
 import axios from "axios";
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { apiUrlCreateUser } from "../../../../Apis/apis";
-import { htmlElement } from "../types/types";
+import { htmlElement } from "../types/Types";
+import useIsVisible from "../../../routes/navbar/useIsVisible";
 
 export default function RegisterLogic() {
   const [name, setName] = useState("");
@@ -10,8 +11,9 @@ export default function RegisterLogic() {
   const [pass, setPass] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
   const history = useNavigate();
+  const { setIsOnline } = useIsVisible();
 
-  const handleSubmit = async (event: htmlElement) => {
+  const handleSubmit = useCallback(async (event: htmlElement) => {
     event.preventDefault();
 
     try {
@@ -19,10 +21,11 @@ export default function RegisterLogic() {
       console.log(response.data);
       const token = response.data.token;
       localStorage.setItem("token", token);
+      setIsOnline(true)
       history("/HomeUser");
     } catch {
       setErrorMessage("Usuario Existente");
     }
-  };
-  return { setName, setUSer, setPass, errorMessage, handleSubmit };
+  },[name,user,pass,history,setIsOnline]);
+  return {name, user, pass, setName, setUSer, setPass, errorMessage, handleSubmit };
 }

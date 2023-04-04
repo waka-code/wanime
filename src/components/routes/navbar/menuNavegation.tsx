@@ -2,46 +2,66 @@ import logo from "../..//../img/logo.png";
 import { FcSearch } from "react-icons/fc";
 import "./menuNavegation.css";
 import { NavLink } from "react-router-dom";
-import IsVisible from "./IsVisible";
+import IsVisible from "./useIsVisible";
 import { MdOnlinePrediction } from "react-icons/md";
+import NotFound from "../../Pages/NotFound";
 
 function MenuNavegation() {
-  const { showComponent, handleInputChange, datass, setShowComponent, token } =
-    IsVisible();
+  const {
+    setInputValue,
+    inputValue,
+    showComponent,
+    handleInputChange,
+    datas,
+    setShowComponent,
+    isOnline,
+    handleKeyPress
+  } = IsVisible();
 
   return (
-    <nav className="menuuNavegation" onClick={() => setShowComponent(false)}>
-      <div className="boxLogo">
+    <nav
+      className="menu_navegation"
+      onClick={() => {
+        setShowComponent(false);
+        setInputValue("");
+      }}
+    >
+      <div className="box_logo">
         <img src={logo} alt="logo" />
         <h3>animeJK</h3>
       </div>
-      <div className={`${token ? "boxSearchs" : "boxSearch"}`}>
-        <ul className="boxMenuUl">
+      <div className={`${isOnline ? "box_searchs" : "box_search"}`}>
+        <ul className="box_menu_ul">
           <NavLink to="/home" className="li">
             HOME
           </NavLink>
           <NavLink to="/list" className="li">
             LIST ANIME
           </NavLink>
-          {token ? (
+          {isOnline ? (
             <NavLink to="/HomeUser" className="li">
-              ACCOUNT
+              CONTROL PANEL
             </NavLink>
           ) : null}
         </ul>
 
-        <div className="boxMenuInput">
+        <div className="box_menu_input">
           <section>
-            <input type="text" onChange={handleInputChange} />
+            <input
+              type="text"
+              value={inputValue}
+              onChange={handleInputChange}
+              onKeyDown={handleKeyPress}
+            />
             <FcSearch className="icono" />
           </section>
-          {token ? (
-            <span className="menuicons">
+          {isOnline ? (
+            <span className="menu_icons">
               {" "}
               <MdOnlinePrediction className="icon" /> online
             </span>
           ) : (
-            <button className="menuBtn">
+            <button className="menu_btn">
               <NavLink to="/login" className="li">
                 LOGIN
               </NavLink>
@@ -50,18 +70,26 @@ function MenuNavegation() {
         </div>
       </div>
       {showComponent && (
-        <div className="boxSearchAnimeByNAme">
-          {datass.map((items) => {
-            return (
-              <NavLink
-                to={`/${items._id}`}
-                key={items._id}
-                className="boxShowComponent"
-              >
-                <section>{items.title}</section>
-              </NavLink>
-            );
-          })}
+        <div className="box_search_anime_by_name">
+          {datas.length === 0 ? (
+            <NotFound />
+          ) : (
+            datas.map((items) => {
+              return (
+                <NavLink
+                  to={`/${items._id}`}
+                  key={items._id}
+                  className="box_show_component"
+                  onClick={() => {
+                    setShowComponent(false);
+                    setInputValue("");
+                  }}
+                >
+                  <section>{items.title}</section>
+                </NavLink>
+              );
+            })
+          )}
         </div>
       )}
     </nav>

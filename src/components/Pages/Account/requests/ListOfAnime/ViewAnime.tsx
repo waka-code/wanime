@@ -1,35 +1,41 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import ListAnimeLogic from "../../../listAnime/ListAnimeLogic";
-import UpdateAnimeLogic from "../UpdateAnime/UpdateAnimeLogic";
+import ListAnimeLogic from "../../../listAnime/useListAnimeLogic";
+import UpdateAnimeLogic from "../UpdateAnime/useUpdateAnimeLogic";
 import "./ViewAnime.css";
-import ViewAnimeLogic from "./ViewAnimeLogic";
+import ViewAnimeLogic from "./useViewAnimeLogic";
 function ViewAnime() {
-  const { currentPage, totalPages, filteredSearch, prev, next } =
+  const { filterByAnimeName, prev, next } =
     ListAnimeLogic();
 
   const { captureId } = UpdateAnimeLogic();
   const { handleSubmit } = ViewAnimeLogic();
 
   return (
-    <div className="boxViewAnime">
-      <div className="newAnime">
-        {filteredSearch.map((items, idx) => {
+    <div className="box_view_anime">
+      <div className="new_anime">
+        {filterByAnimeName.map((items, idx) => {
           return (
-            <div className="boxAnime" key={items._id}>
-              <section className="viewAnimeImg">
+            <div className="box_anime" key={items._id}>
+              <section className="view_anime_img">
                 <img src={items.img} alt={items.title} />
               </section>
-              <section className="viewAnimeTxt">
+              <section className="view_anime_txt">
                 <span>{items.title}</span>
                 <br />
                 <span>{items.gender}</span>
                 <br />
                 <p>{items.description}</p>
               </section>
-              <section className="boxBrn">
-                <button onClick={() => handleSubmit(items._id)}>Delete</button>
-                <NavLink to="/HomeUser/Update" className="BoxUpdate">
+              <section className="box_btn">
+                <button
+                  onClick={() => {
+                    handleSubmit(items._id);
+                  }}
+                >
+                  Delete
+                </button>
+                <NavLink to="/HomeUser/Update" className="box_update">
                   <button onClick={() => captureId(items._id)}>Update</button>
                 </NavLink>
               </section>
@@ -37,9 +43,8 @@ function ViewAnime() {
           );
         })}
       </div>
-      <section className="boxBrn">
+      <section className="box_btn">
         <button onClick={prev}>Prev</button>
-        <span>{currentPage / totalPages}</span>
         <button onClick={next}>Next</button>
       </section>
     </div>

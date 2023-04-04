@@ -22,6 +22,10 @@ const userSchema = mongoose.Schema({
     type: String,
     required: true,
   },
+  date:{
+    type: Date,
+    required: true,
+  }
 });
 
 userSchema.plugin(mongoosePaginate);

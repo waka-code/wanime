@@ -6,7 +6,6 @@
     color:#fff;
     text-align: center;
     padding: 10px;
-
 }
 .boxFooterSections{
     display: flex;
@@ -18,7 +17,7 @@
     align-items: center;
 }
 .boxLogoFooter img{
- height: 10vh;
+ height: 5vh;
 }
 
 .social{
@@ -28,7 +27,7 @@
 }
 
 .social:hover{
-    color: blue;
+    color: #807e7e;
 }
 .boxFooter span{
     font-size: 20px;

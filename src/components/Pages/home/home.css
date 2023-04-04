@@ -1,4 +1,4 @@
-.homecss {
+.home_css {
   display: flex;
   gap: 15px;
   padding: 15px;
@@ -7,8 +7,7 @@
   position: relative;
 }
 
-
-.boxTitle {
+.box_title {
   width: 25%;
   height: 100vh;
 
@@ -21,29 +20,29 @@
   color: #fff;
 }
 
-.boxSocial {
-  background: rgba(4, 15, 26, 0.671);
+.box_social {
+  background: rgba(4, 15, 26, 0.466);
   height: 20%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  font-size: 20px;
+  font-size: 25px;
 }
-.boxSocial a{
+.box_social a {
   text-decoration: none;
   color: #fff;
 }
-.boxTitle h2 {
+.box_title h2 {
   margin: 5px;
 }
-.listTitle {
+.list_title {
   font-size: 20px;
   height: 75%;
   padding: 10px;
 }
-.titleName {
+.title_anime {
   display: flex;
   justify-content: space-between;
   line-height: 40px;
@@ -54,22 +53,22 @@
   text-decoration: none;
   color: #fff;
 }
-.titleName p{
+.title_anime p {
   text-overflow: ellipsis;
   overflow: hidden;
-  width: 230px;
+  width: 250px;
   white-space: nowrap;
 }
 
-.titleName:hover {
-  background: rgba(4, 15, 26, 0.25);
+.title_anime:hover {
+  background: rgba(4, 15, 26, 0.466);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
   border: 2px solid rgba(4, 15, 26, 0.25);
-  color: #000;
+  color: #807e7e;
 }
 
-.boxCatalogo {
+.box_catalogo {
   width: 75%;
   height: 100%;
   background: rgba(4, 15, 26, 0.25);
@@ -81,7 +80,7 @@
   color: #fff;
   overflow: auto;
 }
-.boxVideo {
+.box_video {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 10px;
@@ -102,18 +101,19 @@
   font-size: 16px;
   text-overflow: ellipsis;
   overflow: hidden;
-  width: 100px;
+  width: 150px;
   white-space: nowrap;
   padding: 5px;
 }
-.boxImg {
+.box_img {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 11px;
-  height: 100%;
+  max-height: 100%;
+  max-width: 100%;
   padding: 10px;
 }
-.boxImgTitle {
+.box_img_title {
   display: flex;
   flex-direction: column;
   background: rgba(4, 15, 26, 0.25);
@@ -126,15 +126,14 @@
   width: 100%;
   text-decoration: none;
   cursor: pointer;
-  transition: all 0.5s ease ;
+  transition: all 0.5s ease;
 }
 
-.boxImgTitle:hover {
-  background: rgba(139, 8, 8, 0.25);
+.box_img_title:hover {
   transform: scale(0.9);
 }
 
-.boxImgTitle span {
+.box_img_title span {
   color: #fff;
   font-size: 16px;
   text-overflow: ellipsis;
@@ -144,9 +143,28 @@
   padding: 5px;
 }
 
-#imgBox {
+#img_box {
   width: 100%;
   height: 100%;
 }
 
+.list_and_dropdonw {
+  display: flex;
+  justify-content: space-between;
+}
+.list_and_dropdonw select {
+  border: none;
+  background-color: transparent;
+  color: #ffffff;
+  outline: none;
+  cursor: pointer;
+  font-size: 15px;
 
+  background: rgba(4, 15, 26, 0.25);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.list_and_dropdonw select option {
+  color: #000000;
+}

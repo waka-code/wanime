@@ -1,39 +1,35 @@
-.boxFormLogin {
+.box_form_login {
   height: 100%;
   width: 100%;
-  background-image: url("../../../img/LoginForm.jpg");
-
-  background-position:center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
 }
-.frmLogin {
+.frm_login {
   width: 30%;
   height: auto;
   margin: auto;
-  top: 30%;
   left: 30%;
   position: relative;
   padding: 15px;
-  background: rgba(11, 78, 140, 0.25);
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba( 238, 170, 170, 0.25 );
+  backdrop-filter: blur( 4px );
+  -webkit-backdrop-filter: blur( 4px );
+  border-radius: 10px;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
-.frmLogin h1 {
+.frm_login h1 {
   color: #fff;
   font-size: 25px;
 }
-.frmLogin .boxImput{
+.frm_login .box_imput{
   line-height: 35px;
   padding: 8px;
   display: flex;
   align-items: center;
 }
 
-.frmLogin .boxImput input{
+.frm_login .box_imput input{
   width: 100%;
   height: 4vh;
   padding: 5px;
@@ -43,44 +39,43 @@
   margin: 0 5px;
 }
 
-.frmLogin button {
+.frm_login button {
   width: 40%;
   height: 4vh;
-  background: rgba(11, 78, 140, 0.623);
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(209, 24, 30, 0.534);
+  backdrop-filter: blur( 4px );
+  -webkit-backdrop-filter: blur( 4px );
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
   cursor: pointer;
   color: #fff;
   margin: 5px 38px;
 }
 
-.frmLogin button:hover {
+.frm_login button:hover {
   background: rgba(2, 14, 26, 0.623);
   color: #fff;
 }
-.frmLogin .boxAccount{
+.frm_login .box_account{
   text-align: center;
   margin: 10px;
 }
 
-.frmLogin span{
+.frm_login span{
   font-size: 20px;
   color: #fff;
   text-align: center;
 }
 
-.frmLogin .Sign{
+.frm_login .Sign{
   color: #ff0000;
   text-decoration: none;
 }
-.frmLogin .icons{
+.frm_login .icons{
   color: #fff;
   font-size: 25px;
 }
 
-.frmLogin p{
+.frm_login p{
   text-align: center;
   color: #ffffff;
   margin: 5px;

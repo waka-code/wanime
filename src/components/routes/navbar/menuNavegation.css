@@ -1,4 +1,4 @@
-.menuuNavegation {
+.menu_navegation {
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -13,41 +13,41 @@
   -webkit-backdrop-filter: blur(4px);
 }
 
-.boxLogo {
+.box_logo {
   display: flex;
   align-items: self-end;
   justify-content: center;
 }
 
-.boxLogo img {
+.box_logo img {
   height: 8vh;
 }
 
-.boxLogo h3 {
+.box_logo h3 {
   margin: 0 0 6px 0;
 }
 
-.boxSearch {
+.box_search {
   display: flex;
   width: 40%;
   align-items: center;
   justify-content: space-around;
 }
-.boxSearchs {
+.box_searchs {
   display: flex;
-  width: 50%;
+  width: 58%;
   align-items: center;
   justify-content: space-around;
 }
 
-.boxMenuUl {
+.box_menu_ul {
   list-style: none;
   display: flex;
   align-items: center;
   height: 5vh;
 }
 
-.boxMenuUl .li {
+.box_menu_ul .li {
   margin: 0 10px;
   cursor: pointer;
   font-size: 15px;
@@ -55,16 +55,16 @@
   color: #fff;
 }
 
-.boxMenuUl .li:hover {
+.box_menu_ul .li:hover {
   color: #807e7e;
 }
-.boxMenuInput {
+.box_menu_input {
   display: flex;
   align-items: center;
   width: 60%;
   justify-content: space-evenly;
 }
-.boxMenuInput section {
+.box_menu_input section {
   border: none;
   height: auto;
   width: auto;
@@ -75,7 +75,7 @@
   padding: 5px;
 }
 
-.boxMenuInput section input {
+.box_menu_input section input {
   width: 100%;
   height: 4vh;
   border: none;
@@ -85,35 +85,34 @@
   color: #fff;
 }
 
-.boxMenuInput .icono {
+.box_menu_input .icono {
   font-size: 25px;
 }
 
-.boxMenuInput button {
-  width: 20%;
-  height: 4vh;
+.box_menu_input button {
+  width: 22%;
+  height: 5vh;
   outline: none;
   color: #fff;
   cursor: pointer;
 
-  background: rgba(11, 78, 140, 0.25);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
-  border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  background-color: #e1e7ec49;
+  backdrop-filter: blur( 4px );
+  -webkit-backdrop-filter: blur( 4px );
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
 
-.boxMenuInput button:hover {
+.box_menu_input button:hover {
   background: rgba(221, 226, 230, 0.568);
   color: #000000;
   border: 1px solid rgba(0, 0, 0, 0.795);
 }
 
-.boxMenuInput .menuBtn .li {
+.box_menu_input .menu_btn .li {
   color: #fff;
   text-decoration: none;
 }
-.boxSearchAnimeByNAme {
+.box_search_anime_by_name {
   position: fixed;
   top: 105%;
   left: 60%;
@@ -127,11 +126,11 @@
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.18);
 }
-.boxShowComponent {
+.box_show_component {
   text-decoration: none;
 }
 
-.boxShowComponent section {
+.box_show_component section {
   color: #ffffff;
   font-size: 20px;
   line-height: 30px;
@@ -141,7 +140,7 @@
   width: 100%;
   white-space: nowrap;
 }
-.boxShowComponent section:hover {
+.box_show_component section:hover {
   background: rgba(255, 255, 255, 0.25);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
@@ -149,7 +148,7 @@
   color: #000;
 }
 
-.boxMenuInput .menuicons {
+.box_menu_input .menu_icons {
   display: flex;
   align-items: center;
 }
@@ -157,4 +156,9 @@
 .icon {
   color: #00ff15;
   font-size: 20px;
+}
+
+.box_search_anime_by_name .not_found{
+  width: auto;
+  font-size: 25px;
 }

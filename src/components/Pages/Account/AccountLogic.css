@@ -1,33 +1,33 @@
-.boxAccountr {
+.box_accounts {
   position: fixed;
   width: 100%;
-  height: 100vh;
+  height: auto;
   top: 11%;
 }
 
-.boxNavAccount {
+.box_nav_account {
   display: flex;
   flex-direction: column;
   width: 30%;
   padding: 10px;
-  height: 100%;
   line-height: 40px;
-
   background: rgba(0, 0, 0, 0.25);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
+  color: #e0dede;
+  font-size: 30px;
 }
-.navAccount {
+.nav_account {
   text-decoration: none;
   font-size: 20px;
   padding: 5px;
-  color: #fff;
+  color: #e0dede;
 }
-.navAccount:hover {
+.nav_account:hover {
   background-color: rgb(0, 0, 0);
 }
 
-.boxNavAccount button {
+.box_nav_account button {
   width: 50%;
   height: 5vh;
   outline: none;
@@ -41,8 +41,37 @@
   font-size: 18px;
 }
 
+.box_acount_route {
+  width: 100%;
+  height: 100vh;
+}
 
-.boxAcountRoute{
-    width: 100%;
-    height: 100vh;
+.box_info_date {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  gap: 2px;
+  width: 50vw;
+  position: relative;
+  padding: 5px;
+  left: 40%;
+  bottom: 25%;
+  height: 60%;
+  background: rgba(0, 0, 0, 0.575);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.466);
+}
+
+.box_date {
+  display: flex;
+  justify-content: space-between;
+  font-size: 20px;
+  color: #e0dede;
+  padding: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.466);
+}
+
+.box_btn span{
+  color: #fff;
 }

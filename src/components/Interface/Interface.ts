@@ -1,14 +1,15 @@
-export interface IObject {
+export interface IsAnime {
     _id?: string;
     title: string;
     description?: string;
-    gender?: string;
+    gender: string;
     img?: string;
     video?: string;
+    date?:string;
   }
 
 
-  export interface IObjectUser {
+  export interface IsDataUser {
     name?: string;
     user?: string;
     pass?: string;

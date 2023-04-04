@@ -1,8 +1,8 @@
 import React from "react";
 import "./App.css";
 import { HashRouter } from "react-router-dom";
-import RoutePage from "./components/routes/routePages/routePage";
-import MenuNavegation from "./components/routes/navbar/menuNavegation";
+import MenuNavegation from "./components/routes/navbar/MenuNavegation";
+import RoutePage from "./components/routes/routePages/RoutePage";
 
 function App() {
   return (
@@ -11,6 +11,7 @@ function App() {
         <MenuNavegation />
         <RoutePage />
       </HashRouter>
+
     </div>
   );
 }

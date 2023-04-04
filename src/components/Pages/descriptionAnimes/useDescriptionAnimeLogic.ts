@@ -1,12 +1,12 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { apiUrlData } from "../../../Apis/apis";
-import { IObject } from "../../Interface/interface";
+import { IsAnime } from "../../Interface/Interface";
 
 export default function DescriptionAnimeLogic() {
   const { _id } = useParams();
-  const [animesDescript, setAnimesDescript] = useState<IObject>();
+  const [animesDescript, setAnimesDescript] = useState<IsAnime>();
 
   useEffect(() => {
     const searchData = async () => {
@@ -15,7 +15,7 @@ export default function DescriptionAnimeLogic() {
       console.log(res.data.docs);
     };
 
-    searchData();
+    searchData()
   }, [_id]);
   return { animesDescript };
 }

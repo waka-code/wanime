@@ -1,5 +1,5 @@
 import React from "react";
-import UpdateAnimeLogic from "./UpdateAnimeLogic";
+import UpdateAnimeLogic from "./useUpdateAnimeLogic";
 
 export default function UpdateAnime() {
   const {
@@ -9,43 +9,53 @@ export default function UpdateAnime() {
     setImg,
     setVideo,
     errorMessage,
-    handleSubmitReserch,
+    avoidRefills,
     handleSubmits,
+    title,
+    description,
+    gender,
+    img,
+    video,
   } = UpdateAnimeLogic();
 
   return (
-    <div className="boxNewAnime">
-      <form onSubmit={handleSubmitReserch}>
+    <div className="box_new_anime">
+      <form onSubmit={avoidRefills}>
         <span>Update</span>
+        {errorMessage && <p>{errorMessage}</p>}
         <input
           type="text"
           placeholder="Title"
+          value={title}
           onChange={(e) => setTitle(e.target.value)}
         />
         <input
           type="text"
           placeholder="Gender"
+          value={gender}
           onChange={(e) => setGender(e.target.value)}
         />
         <input
           type="text"
           placeholder="Img"
+          value={img}
           onChange={(e) => setImg(e.target.value)}
         />
         <input
           type="text"
           placeholder="Video"
+          value={video}
           onChange={(e) => setVideo(e.target.value)}
         />
         <textarea
           placeholder="Description"
+          value={description}
           onChange={(e) => setDescription(e.target.value)}
         />
         <button type="submit" onClick={handleSubmits}>
           Update
         </button>
       </form>
-      {errorMessage && <p>{errorMessage}</p>}
     </div>
   );
 }

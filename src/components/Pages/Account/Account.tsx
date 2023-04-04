@@ -3,7 +3,7 @@ import AccountRoute from './AccountRoute'
 
 export default function Account() {
   return (
-    <div className="boxAccountr">
+    <div className="box_accounts">
         <AccountRoute />
     </div>
   )
