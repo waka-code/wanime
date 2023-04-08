@@ -5,13 +5,13 @@ import DescriptionAnimeLogic from "./useDescriptionAnimeLogic";
 import ViewAnimeLogic from "../Account/requests/ListOfAnime/useViewAnimeLogic";
 import { NavLink } from "react-router-dom";
 import UpdateAnimeLogic from "../Account/requests/UpdateAnime/useUpdateAnimeLogic";
-import IsVisible from "../../routes/navbar/useIsVisible";
+import LoginLogic from "../RegistrationAndLoginData/Login/useLoginLogic";
 
 export default function DescriptionAnimes() {
   const { animesDescript } = DescriptionAnimeLogic();
   const { handleSubmit } = ViewAnimeLogic();
   const { captureId } = UpdateAnimeLogic();
-  const { isOnline } = IsVisible();
+  const { isOnline } = LoginLogic();
 
   return (
     <div className="box_description">

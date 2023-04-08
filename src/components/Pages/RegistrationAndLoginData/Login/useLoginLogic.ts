@@ -3,14 +3,14 @@ import { useCallback, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { apiUrLogin } from "../../../../Apis/apis";
 import { htmlElement } from "../types/Types";
-import useIsVisible from "../../../routes/navbar/useIsVisible";
 
 export default function LoginLogic() {
   const [user, setUser] = useState("");
   const [pass, setPass] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
+  const [isOnline, setIsOnline] = useState(false);
   const history = useNavigate();
-  const { setIsOnline } = useIsVisible();
+
   const handleSubmit = useCallback(
     async (event: htmlElement) => {
       event.preventDefault();
@@ -19,28 +19,38 @@ export default function LoginLogic() {
           user,
           pass,
         });
-        if (response) {
-          const token = response.data.token;
+        const { token } = response.data;
+
+        if (response && token) {
           localStorage.setItem("token", token);
-          setIsOnline(true)
           history("/HomeUser");
         }
       } catch (error) {
         setUser("");
         setPass("");
-        setIsOnline(false)
         setErrorMessage(`Nombre de usuario o contraseña incorrectos`);
       }
     },
-    [user, pass, history,setIsOnline]
+    [user, pass, history]
   );
 
   useEffect(() => {
     const tokens = localStorage.getItem("token");
     if (tokens) {
-      history("/HomeUser");
+      setIsOnline(true);
+    } else {
+      setIsOnline(false);
     }
-  }, [history]);
+  }, [history, isOnline]);
 
-  return { setUser, setPass, errorMessage, handleSubmit, pass, user };
+  return {
+    setUser,
+    setPass,
+    errorMessage,
+    handleSubmit,
+    pass,
+    user,
+    isOnline,
+    setIsOnline,
+  };
 }

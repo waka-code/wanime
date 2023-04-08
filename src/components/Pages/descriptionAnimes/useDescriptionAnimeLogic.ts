@@ -12,7 +12,6 @@ export default function DescriptionAnimeLogic() {
     const searchData = async () => {
       const res = await axios.get(`${apiUrlData}/${_id}`);
       setAnimesDescript(res.data);
-      console.log(res.data.docs);
     };
 
     searchData()

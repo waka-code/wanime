@@ -24,7 +24,8 @@
 }
 
 .box_logo h3 {
-  margin: 0 0 6px 0;
+  margin: 0 0 18px 0;
+  font-size: 15px;
 }
 
 .box_search {
@@ -35,7 +36,7 @@
 }
 .box_searchs {
   display: flex;
-  width: 58%;
+  width: 55%;
   align-items: center;
   justify-content: space-around;
 }
@@ -50,7 +51,7 @@
 .box_menu_ul .li {
   margin: 0 10px;
   cursor: pointer;
-  font-size: 15px;
+  font-size: 14px;
   text-decoration: none;
   color: #fff;
 }
@@ -132,7 +133,7 @@
 
 .box_show_component section {
   color: #ffffff;
-  font-size: 20px;
+  font-size: 15px;
   line-height: 30px;
   padding: 5px;
   text-overflow: ellipsis;

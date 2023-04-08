@@ -6,7 +6,6 @@ function ViewAnimeLogic() {
   const handleSubmit = useCallback(async (idAnime: string | undefined) => {
     try {
       await axios.delete(`${dltData}${idAnime}`);
-      console.log("eliminado");
     } catch {
       console.log("no se elimino el elemento");
     }

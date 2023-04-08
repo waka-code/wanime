@@ -3,11 +3,11 @@ import { useNavigate } from "react-router-dom";
 import { logout } from "../../../Apis/apis";
 import "./AccountLogic.css";
 import { useCallback } from "react";
-import useIsVisible from "../../routes/navbar/useIsVisible";
+import LoginLogic from "../RegistrationAndLoginData/Login/useLoginLogic";
 
 export default function AccountLogic() {
   const history = useNavigate();
-  const { setIsOnline } = useIsVisible();
+  const { setIsOnline } = LoginLogic();
   const LogoutButton = useCallback(async () => {
     try {
       await axios.post(logout);

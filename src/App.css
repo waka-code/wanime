@@ -3,6 +3,7 @@
   padding: 0;
   box-sizing: border-box;
   user-select: none;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .App {
@@ -24,5 +25,22 @@
   font-size: 80px;
   width: 100vw;
   text-align: center;
+  color: #0994ac;
+}
+
+.page_not_found{
+  font-size: 80px;
+  width: 100vw;
+  text-align: center;
+  color: #0994ac;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.page_not_found .return{
+  text-decoration: none;
   color: #0994ac;
 }

@@ -5,8 +5,7 @@ import UpdateAnimeLogic from "../UpdateAnime/useUpdateAnimeLogic";
 import "./ViewAnime.css";
 import ViewAnimeLogic from "./useViewAnimeLogic";
 function ViewAnime() {
-  const { filterByAnimeName, prev, next } =
-    ListAnimeLogic();
+  const { filterByAnimeName, prev, next } = ListAnimeLogic();
 
   const { captureId } = UpdateAnimeLogic();
   const { handleSubmit } = ViewAnimeLogic();

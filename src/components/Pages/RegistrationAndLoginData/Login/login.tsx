@@ -30,9 +30,7 @@ export default function Login() {
             required
           />
         </section>
-        <button type="submit">
-          Sign In
-        </button>
+        <button type="submit">Sign In</button>
         {errorMessage && <p>{errorMessage}</p>}
         <section className="box_account">
           <span>

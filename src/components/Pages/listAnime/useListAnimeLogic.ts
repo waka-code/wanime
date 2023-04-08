@@ -1,8 +1,8 @@
 import axios from "axios";
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { apiUrlData } from "../../../Apis/apis";
 import { IsAnime } from "../../Interface/Interface";
-import { Events } from "../RegistrationAndLoginData/types/Types";
+import { Events, SelectEvent } from "../RegistrationAndLoginData/types/Types";
 import { useNavigate } from "react-router-dom";
 
 export default function ListAnimeLogic() {
@@ -10,7 +10,13 @@ export default function ListAnimeLogic() {
   const [filterByAnimeName, setFilterByAnimeName] = useState<IsAnime[]>([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
+  const [selectedGenre, setSelectedGenre] = useState("");
   const handleSubmit = useCallback((e: Events) => e.preventDefault(), []);
+  const history = useNavigate();
+
+  const handleGenreChange = (event: SelectEvent) => {
+    setSelectedGenre(event.target.value);
+  };
 
   useEffect(() => {
     const searchData = async () => {
@@ -23,41 +29,34 @@ export default function ListAnimeLogic() {
       setTotalPages(totalPages);
     };
 
-    searchData();
-  }, [currentPage]);
-
-
-
-  const filterSearch = useCallback(
-    (e: Events) => {
-      const data = e.target.value;
-      e.preventDefault();
-      const filterData = Search.filter((dataSearch) =>
-        dataSearch.title.toLowerCase().includes(data.toLowerCase())
-      );
-      setFilterByAnimeName(filterData);
-    },
-    [Search, setFilterByAnimeName]
-  );
+    setFilterByAnimeName(
+      Search.filter((dataSearch) =>
+        dataSearch.gender.toLowerCase().includes(selectedGenre.toLowerCase())
+      )
+    );
+    
+    if (currentPage && Search) {
+      searchData();
+    }
+  }, [currentPage, selectedGenre, Search]);
 
   const next = useCallback(async () => {
     if (currentPage === totalPages) {
-      alert("Last page");
+      return history(`/list`);
     } else {
       setCurrentPage(currentPage + 1);
     }
-  }, [currentPage, totalPages]);
+  }, [currentPage, totalPages, history]);
 
   const prev = useCallback(async () => {
     if (currentPage === 1) {
-      alert("Please click on next");
+      return history(`/list`);
     } else {
       setCurrentPage(currentPage - 1);
     }
-  }, [currentPage]);
+  }, [currentPage, history]);
 
   return {
-    filterSearch,
     currentPage,
     totalPages,
     filterByAnimeName,
@@ -65,5 +64,7 @@ export default function ListAnimeLogic() {
     next,
     handleSubmit,
     setFilterByAnimeName,
+    selectedGenre,
+    handleGenreChange,
   };
 }

@@ -4,14 +4,14 @@ import { apiUrlData } from "../../../Apis/apis";
 import { IsAnime } from "../../Interface/Interface";
 import { Events } from "../../Pages/RegistrationAndLoginData/types/Types";
 import { useNavigate } from "react-router-dom";
+import {KeyboardEvent} from "../../Pages/RegistrationAndLoginData/types/Types"
 
 export default function IsVisible() {
   const [showComponent, setShowComponent] = useState(false);
   const [datas, setDatas] = useState<IsAnime[]>([]);
-  const [isOnline, setIsOnline] = useState(false);
   const [inputValue, setInputValue] = useState("");
   const token = localStorage.getItem("token");
-  //const history = useNavigate();
+  const history = useNavigate();
 
   const handleSearch = useCallback(async () => {
     setShowComponent(true);
@@ -29,9 +29,19 @@ export default function IsVisible() {
     setDatas(filterData);
   }, []);
 
-  const handleKeyPress = (event: React.KeyboardEvent<HTMLInputElement>) => {
+  const handleKeyDonw = (event: KeyboardEvent) => {
     if (event.key === "Enter") {
-      handleSearch();
+      if (datas.length > 0) {
+        datas.map((anime) => {
+          history(`${anime._id}`);
+          setInputValue("");
+          setShowComponent(false);
+        });
+      } else {
+        history(`/Pagenotfound`);
+        setInputValue("");
+        setShowComponent(false);
+      }
     }
   };
 
@@ -44,8 +54,6 @@ export default function IsVisible() {
     inputValue,
     setInputValue,
     token,
-    isOnline,
-    setIsOnline,
-    handleKeyPress,
+    handleKeyDonw,
   };
 }

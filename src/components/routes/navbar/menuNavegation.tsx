@@ -4,7 +4,8 @@ import "./menuNavegation.css";
 import { NavLink } from "react-router-dom";
 import IsVisible from "./useIsVisible";
 import { MdOnlinePrediction } from "react-icons/md";
-import NotFound from "../../Pages/NotFound";
+import {NotFound} from "../../Pages/NotFound";
+import LoginLogic from "../../Pages/RegistrationAndLoginData/Login/useLoginLogic";
 
 function MenuNavegation() {
   const {
@@ -14,9 +15,10 @@ function MenuNavegation() {
     handleInputChange,
     datas,
     setShowComponent,
-    isOnline,
-    handleKeyPress
+    handleKeyDonw,
   } = IsVisible();
+
+  const { isOnline } = LoginLogic();
 
   return (
     <nav
@@ -51,7 +53,7 @@ function MenuNavegation() {
               type="text"
               value={inputValue}
               onChange={handleInputChange}
-              onKeyDown={handleKeyPress}
+              onKeyDown={handleKeyDonw}
             />
             <FcSearch className="icono" />
           </section>

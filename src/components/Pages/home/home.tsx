@@ -4,11 +4,9 @@ import ListImag from "./listImg/ListImag";
 import ListVideo from "./listVideo/ListVideo";
 import ListNameAnime from "./listName/ListNameAnime";
 import AxiosApi from "../../../Apis/AxiosApi";
-import ListNameAnimeLogic from "./listName/ListNameAnimeLogic";
 
 function Home() {
   const { dataName } = AxiosApi();
-  const { selectedGenre, handleGenreChange,animeData } = ListNameAnimeLogic();
   return (
     <div className="home_css">
       <section className="box_title">
@@ -18,16 +16,7 @@ function Home() {
             <AiOutlineInstagram />
           </a>
         </article>
-        <article className="list_and_dropdonw">
-          <h2>List</h2>
-          <select value={selectedGenre} onChange={handleGenreChange}>
-            <option value="">Gender</option>
-            <option value="Accion">Accion</option>
-            <option value="SobreNatural">SobreNatural</option>
-            <option value="Shonen">Shonen</option>
-          </select>
-        </article>
-        <ListNameAnime animeData={animeData}/>
+        <ListNameAnime dataName={dataName} />
       </section>
       <section className="box_catalogo">
         <ListVideo dataName={dataName} />

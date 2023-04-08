@@ -28,7 +28,7 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  font-size: 25px;
+  font-size: 20px;
 }
 .box_social a {
   text-decoration: none;
@@ -38,7 +38,7 @@
   margin: 5px;
 }
 .list_title {
-  font-size: 20px;
+  font-size: 18px;
   height: 75%;
   padding: 10px;
 }
@@ -98,7 +98,7 @@
 }
 .video .title {
   color: #fff;
-  font-size: 16px;
+  font-size: 14px;
   text-overflow: ellipsis;
   overflow: hidden;
   width: 150px;
@@ -135,7 +135,7 @@
 
 .box_img_title span {
   color: #fff;
-  font-size: 16px;
+  font-size: 14px;
   text-overflow: ellipsis;
   overflow: hidden;
   width: 130px;
@@ -148,23 +148,3 @@
   height: 100%;
 }
 
-.list_and_dropdonw {
-  display: flex;
-  justify-content: space-between;
-}
-.list_and_dropdonw select {
-  border: none;
-  background-color: transparent;
-  color: #ffffff;
-  outline: none;
-  cursor: pointer;
-  font-size: 15px;
-
-  background: rgba(4, 15, 26, 0.25);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
-}
-
-.list_and_dropdonw select option {
-  color: #000000;
-}

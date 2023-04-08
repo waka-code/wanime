@@ -41,7 +41,9 @@
 .view_anime_txt span {
   text-overflow: ellipsis;
   overflow: hidden;
-  width: 100px;
+  width: 10px;
+  white-space: nowrap;
+  font-size: 15px;
 }
 
 .view_anime_txt p {
@@ -49,6 +51,7 @@
   overflow: hidden;
   width: 250px;
   white-space: nowrap;
+  font-size: 15px;
 }
 
 .box_btn {
