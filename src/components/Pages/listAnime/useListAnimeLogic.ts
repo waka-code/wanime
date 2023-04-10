@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { apiUrlData } from "../../../Apis/apis";
 import { IsAnime } from "../../Interface/Interface";
 import { Events, SelectEvent } from "../RegistrationAndLoginData/types/Types";
@@ -14,10 +14,6 @@ export default function ListAnimeLogic() {
   const handleSubmit = useCallback((e: Events) => e.preventDefault(), []);
   const history = useNavigate();
 
-  const handleGenreChange = (event: SelectEvent) => {
-    setSelectedGenre(event.target.value);
-  };
-
   useEffect(() => {
     const searchData = async () => {
       const res = await axios.get(apiUrlData, {
@@ -29,16 +25,27 @@ export default function ListAnimeLogic() {
       setTotalPages(totalPages);
     };
 
-    setFilterByAnimeName(
-      Search.filter((dataSearch) =>
-        dataSearch.gender.toLowerCase().includes(selectedGenre.toLowerCase())
-      )
-    );
-    
-    if (currentPage && Search) {
+    if (currentPage) {
       searchData();
     }
-  }, [currentPage, selectedGenre, Search]);
+  }, [currentPage]);
+
+  const handleGenreChange = (event: SelectEvent) => {
+    setSelectedGenre(event.target.value);
+  };
+
+  const filteredSearch = useMemo(
+    () =>
+      Search.filter((dataSearch) =>
+        dataSearch.gender.toLowerCase().includes(selectedGenre.toLowerCase())
+      ),
+    [selectedGenre, Search]
+  );
+
+  // Actualizar el estado FilterByAnimeName solo cuando cambia la búsqueda filtrada
+  useEffect(() => {
+    setFilterByAnimeName(filteredSearch);
+  }, [filteredSearch]);
 
   const next = useCallback(async () => {
     if (currentPage === totalPages) {

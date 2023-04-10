@@ -9,8 +9,7 @@ function ViewAnimeLogic() {
     } catch {
       console.log("no se elimino el elemento");
     }
-  },[])
-
+  }, []);
   return { handleSubmit };
 }
 

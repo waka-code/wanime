@@ -6,7 +6,16 @@ const router = express.Router();
 // create data
 router.post("/data", async (req, res) => {
   const addData = userSchema(req.body);
-  addData.date = new Date();
+  const { title } = req.body;
+
+  const existingAnime = await userSchema.findOne({ title });
+  if (existingAnime) {
+    return res
+      .status(400)
+      .json({ message: "this anime already exists in the database" });
+  }
+
+  addData.date = new Date()
   addData
     .save()
     .then((data) => res.json(data))
@@ -58,7 +67,6 @@ router.put("/data/:id", (req, res) => {
   if (gender) newData.gender = gender;
   if (img) newData.img = img;
   if (video) newData.video = video;
-
   userSchema
     .updateOne({ _id: id }, { $set: newData })
     .then((data) => res.json(data))

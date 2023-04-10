@@ -1,5 +1,6 @@
 const express = require("express");
 const mongoose = require("mongoose");
+
 require("dotenv").config();
 const dataUser = require("./routes/userRoute");
 const cors = require("cors");
@@ -24,15 +25,15 @@ app.use(
 
 // routes
 app.get("/", (req, res) => {
-    res.send("Welcome to my API Create");
-  });
-  
-  // mongodb connection
-  mongoose
-    .connect(process.env.MONGODBURL)
-    .then(() => console.log("Connected to MongoDB Atlas"))
-    .catch((error) => console.error(error));
-  
-  // server listening
-  app.listen(port, () => console.log("Server listening to", port));
-  
+  res.send("Welcome to my API Create");
+});
+
+// mongodb connection
+
+mongoose
+  .connect(process.env.MONGODBURL)
+  .then(() => console.log("Connected to MongoDB Atlas"))
+  .catch((error) => console.error(error));
+
+// server listening
+app.listen(port, () => console.log("Server listening to", port));
