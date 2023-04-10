@@ -29,7 +29,6 @@ app.get("/", (req, res) => {
 });
 
 // mongodb connection
-
 mongoose
   .connect(process.env.MONGODBURL)
   .then(() => console.log("Connected to MongoDB Atlas"))

@@ -24,7 +24,7 @@ function ListAnime() {
             <option value="">Gender</option>
             <option value="Shonen">Shonen</option>
             <option value="Misterio">Misterio</option>
-            <option value="Sobrenatural ">Sobrenatural</option>
+            <option value="Sobrenatural">Sobrenatural</option>
           </select>
         </article>
         <section>

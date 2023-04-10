@@ -37,7 +37,7 @@ export default function DescriptionAnimes() {
         </section>
         <section className="box_descriptions">
           <section>
-            <span>Sinopsis</span>
+            <span>Synopsis</span>
             <article className="gender">{animesDescript?.gender}</article>
             <article>{animesDescript?.description}</article>
           </section>
