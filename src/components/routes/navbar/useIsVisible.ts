@@ -40,7 +40,8 @@ export default function IsVisible() {
           setInputValue("");
           setShowComponent(false);
         } else if (datas.length > 1) {
-          setFoundData(datas);
+          setFoundData(datas)
+          if(!inputValue) return
           history(`/found`, { state: { data: datas } });
           setFoundData([]);
           setInputValue("");

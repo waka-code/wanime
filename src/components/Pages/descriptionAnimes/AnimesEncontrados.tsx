@@ -10,7 +10,7 @@ export default function AnimesEncontrados() {
   useEffect(() => {
     if (history.state?.data) {
       setFoundData(history.state.data);
-    }
+    } 
   }, [history.state, setFoundData]);
 
   return (
