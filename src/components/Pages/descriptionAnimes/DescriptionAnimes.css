@@ -4,6 +4,7 @@
   color: #fff;
   height: 100%;
 }
+
 .box_img_personaje {
   display: flex;
   justify-content: end;
@@ -42,7 +43,7 @@
   border-radius: 10px;
 }
 
-.box_img_gender article { 
+.box_img_gender article {
   width: 100%;
   text-align: center;
   height: 7vh;
@@ -56,24 +57,23 @@
   border: 1px solid rgba(255, 255, 255, 0.18);
   border-radius: 10px;
 
-
   border-radius: 10px;
   margin: 15px 0;
 }
 
-.box_img_gender button{
+.box_img_gender button {
   background: rgba(255, 255, 255, 0.25);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
   border: 1px solid rgba(255, 255, 255, 0.18);
-  margin:0 15px;
+  margin: 0 15px;
   width: 40%;
   height: 5vh;
   color: #fff;
   cursor: pointer;
 }
 
-.box_img_gender button:hover{
+.box_img_gender button:hover {
   background: rgba(255, 255, 255, 0.637);
   color: #000000;
 }
@@ -85,7 +85,7 @@
   padding: 15px;
 }
 
-.box_descriptions section{
+.box_descriptions section {
   padding: 15px;
 
   background: rgba(255, 255, 255, 0.25);
@@ -94,29 +94,78 @@
   border: 1px solid rgba(255, 255, 255, 0.18);
   border-radius: 10px;
 }
-.box_descriptions section span{
-    font-size: 30px;
-  }
+.box_descriptions section span {
+  font-size: 30px;
+}
 
-  .gender{
-    color: rgb(0, 0, 0);
-    font-size: 20px;
+.gender {
+  color: rgb(0, 0, 0);
+  font-size: 20px;
+}
+.box_video_descript h3 {
+  font-size: 25px;
+}
+.box_descriptions .box_video_descript {
+  border: 2px solid rgb(0, 247, 255);
+  width: 100%;
+  height: 70vh;
+  margin: 15px auto;
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 10px;
+  padding: 15px;
+}
+.box_found{
+  background: rgba(117, 115, 115, 0.25);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  position: relative;
+  width: 100%;
+  top: 75px;
+  height: auto;
+  padding: 10px;
+  text-align: center;
+}
 
-  }
-  .box_video_descript h3{
-    font-size: 25px;
-  }
-.box_descriptions .box_video_descript{
-    border: 2px solid rgb(0, 247, 255);
-    width: 100%;
-    height: 70vh;
-    margin:15px auto;
-    background: rgba(255, 255, 255, 0.25);
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    border-radius: 10px;
-    padding: 15px;
-  }
+.box_found span{
+  font-size: 25px;
+  color: #fff;
+}
+
+.box_animes_found {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+  padding: 10px;
+}
+
+.box_animes_found div {
+  max-width: 15vw;
+  height: 30vh;
+  text-align: center;
+  transition: all .5s ease;
+}
+
+.box_animes_found div:hover {
+ transform: scale(0.9);
+}
+
+
+.box_animes_found div img {
+  height: 100%;
+  width: 100%;
+
+  box-shadow: 0 8px 32px 0 rgba(10, 10, 17, 0.87);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.animes_found {
+  padding: 10px;
+  text-decoration: none;
+  color: #fff;
 
  
+}

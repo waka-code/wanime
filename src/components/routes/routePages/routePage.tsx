@@ -9,7 +9,8 @@ import Account from "../../Pages/Account/Account";
 import NewAnime from "../../Pages/Account/requests/AddNewAnime/NewAnime";
 import ViewAnime from "../../Pages/Account/requests/ListOfAnime/ViewAnime";
 import UpdateAnime from "../../Pages/Account/requests/UpdateAnime/UpdateAnime";
-import {NotFoundPage} from "../../Pages/NotFound"
+import { NotFoundPage } from "../../Pages/NotFound";
+import AnimesEncontrados from "../../Pages/DescriptionAnimes/AnimesEncontrados";
 export default function RoutePage() {
   return (
     <Routes>
@@ -25,6 +26,8 @@ export default function RoutePage() {
       <Route path="/HomeUser/GetAnime" element={<ViewAnime />} />
       <Route path="/HomeUser/Update" element={<UpdateAnime />} />
       <Route path="/Pagenotfound" element={<NotFoundPage />} />
+      <Route path="/found" element={<AnimesEncontrados />} />
+      <Route path="/found/:_id" element={<DescriptionAnimes />} />
     </Routes>
   );
 }

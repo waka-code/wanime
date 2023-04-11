@@ -54,6 +54,7 @@ function MenuNavegation() {
               value={inputValue}
               onChange={handleInputChange}
               onKeyDown={handleKeyDonw}
+              required
             />
             <FcSearch className="icono" />
           </section>
