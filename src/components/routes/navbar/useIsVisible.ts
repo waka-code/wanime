@@ -31,23 +31,31 @@ export default function IsVisible() {
   }, []);
 
   const handleKeyDonw = (event: KeyboardEvent) => {
-    if (event.key === "Enter") {
-      if (datas.length === 1) {
-        datas.map((anime) => {
-          history(`${anime._id}`);
+    switch (event.key) {
+      case "Enter":
+        if (datas.length === 1) {
+          datas.map((anime) => {
+            return history(`${anime._id}`);
+          });
           setInputValue("");
           setShowComponent(false);
-        });
-      } else if (datas.length > 1) {
-        setFoundData(datas);
-        history(`/found`, { state: { data: datas } });
-        setInputValue("");
-        setShowComponent(false);
-      } else {
-        history(`/Pagenotfound`);
-        setInputValue("");
-        setShowComponent(false);
-      }
+        } else if (datas.length > 1) {
+          setFoundData(datas);
+          history(`/found`, { state: { data: datas } });
+          setFoundData([]);
+          setInputValue("");
+          setShowComponent(false);
+        } else if (datas.length === 0) {
+          setInputValue("");
+          setShowComponent(false);
+        } else {
+          history(`/Pagenotfound`);
+          setInputValue("");
+          setShowComponent(false);
+        }
+        break;
+      default:
+        break;
     }
   };
 
